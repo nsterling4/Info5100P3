@@ -1,18 +1,4 @@
 Entity,Category,Year,Diffusion
-Automatic transmission,Transportation,1910,0
-Central heating,Household,1910,0
-Electric power,Household,1910,12.33
-Landline,Communication,1910,24.5
-Stove,Household,1910,16
-Electric power,Household,1911,14
-Landline,Communication,1911,26
-Stove,Household,1911,16.5
-Electric power,Household,1912,16
-Landline,Communication,1912,27
-Stove,Household,1912,17
-Electric power,Household,1913,18
-Landline,Communication,1913,28
-Stove,Household,1913,17
 Electric power,Household,1914,19
 Landline,Communication,1914,29
 Stove,Household,1914,17
