@@ -105,7 +105,7 @@ const technologyData = async () => {
         .attr("font-size", "18px")
         .attr("text-anchor", "middle")
         .attr("transform", "rotate(-90)")
-        .text("Generation(MWh)");
+        .text("Median Income");
 
 
     //Gridlines 
