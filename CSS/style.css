@@ -1,0 +1,48 @@
+/* header */
+
+header {
+  /* background-color: #F9FAF5; */
+  padding: 15px 0 15px 0;
+  font-family: monospace;
+  /* color:rgb(97, 183, 202); */
+}
+
+/* Body */
+body {
+  font-family: monospace;
+  /* font-size: 110%; */
+  line-height: 20px;
+}
+
+
+
+/* Legend */
+#usaMapLegend {
+  position: absolute;
+  float: left;
+  background: #F9F3EE;
+  padding: 0px 0px 10px 0px;
+  left: 20px;
+  top: 600px;
+}
+#usaMapLegend text {
+  /* fill: white; */
+  font-family: monospace;
+  font-size: 14px;
+  stroke: black;
+}
+
+
+
+
+/* footer */
+footer {
+  padding: 10px 10px;
+  background-color:rgb(97, 183, 202);
+  color: #FFFFFF;
+  font-size: small;
+  line-height: 20px;
+}
+footer a{
+  color: #FFFFFF;
+}
