@@ -81,14 +81,14 @@ const technologyData = async () => {
 
     //Gridlines 
 
-    let xGridlines = d3.axisBottom(yearScale).tickSize(-plotHeight - 10).tickFormat("");
+    let xGridlines = d3.axisBottom(yearScale).tickSize(-plotHeight).tickFormat("");
     svgMain.append("g")
         .attr("class", "x gridlines") // X axis
         .attr("transform", "translate(" + svgMainMargin.left + "," + (svgMainMargin.top + plotHeight) + ")")
         .call(xGridlines);
 
 
-    let yGridlines = d3.axisLeft(wealthScale).ticks(11).tickSize(-plotWidth - 10).tickFormat("");
+    let yGridlines = d3.axisLeft(wealthScale).ticks(11).tickSize(-plotWidth).tickFormat("");
     svgMain.append("g")
         .attr("class", "y gridlines") // Y axis
         .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
