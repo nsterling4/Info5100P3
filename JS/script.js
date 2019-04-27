@@ -2,14 +2,14 @@
 let svgMain = d3.select("#svgMain");
 let svgMainWidth = svgMain.attr("width");
 let svgMainHeight = svgMain.attr("height");
-let svgMainMargin = {
+var svgMainMargin = {
     top: 30,
-    right: 50,
+    right: 80,
     bottom: 50,
-    left: 60
+    left: 80
 };
-const plotWidth = svgMainWidth - svgMainMargin.left - svgMainMargin.right;
-const plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
+var plotWidth = svgMainWidth - svgMainMargin.left - svgMainMargin.right;
+var plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
 
 
 
@@ -47,7 +47,7 @@ const technologyData = async () => {
 
     console.log(wealthMinMax);
 
-    const wealthScale = d3.scaleLinear() //Y Axis
+    var wealthScale = d3.scaleLinear() //Y Axis
         .domain(wealthMinMax)
         .range([plotHeight, 0]);
 
@@ -68,22 +68,28 @@ const technologyData = async () => {
         .attr("class", "x axis") // X axis
         .attr("transform", "translate(" + svgMainMargin.left + "," + (svgMainMargin.top + plotHeight) + ")")
         .style("stroke-width", "2px")
+        .style("font-size", "18px")
         .call(xAxis);
 
 
     let yAxis = d3.axisLeft(wealthScale).tickFormat(d3.format("$,~g")); // Y axis
     svgMain.append("g")
         .attr("class", "y axis")
+        .attr("id", "y1")
         .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
         .style("stroke-width", "2px")
         .call(yAxis);
+
 
     //right Y Axis
     let y2Axis = d3.axisLeft(diffusionScale).tickFormat(d3.format(".0%"));
     svgMain.append("g")
         .attr("class", "y axis")
-        .attr("transform", "translate(" + (svgMainMargin.left + plotWidth) + "," + svgMainMargin.top + ")")
+        .attr("id", "y2")
+        .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
         .style("stroke-width", "2px")
+        .style("opacity", 0)
+        .style("font-size", "18px")
         .call(y2Axis);
 
 
@@ -100,12 +106,25 @@ const technologyData = async () => {
     // y label
     svgMain.append("text")
         .attr("class", "y axis label")
+        .attr("id", "y1")
         .attr("x", -svgMainHeight / 2)
         .attr("y", 20)
         .attr("font-size", "18px")
         .attr("text-anchor", "middle")
         .attr("transform", "rotate(-90)")
         .text("Median Income");
+
+    // y2 label
+    svgMain.append("text")
+        .attr("class", "y axis label")
+        .attr("id", "y2")
+        .attr("x", -svgMainHeight / 2)
+        .attr("y", 20)
+        .attr("font-size", "18px")
+        .attr("text-anchor", "middle")
+        .attr("transform", "rotate(-90)")
+        .style("opacity", 0)
+        .text("Diffusion");
 
 
     //Gridlines 
@@ -120,8 +139,17 @@ const technologyData = async () => {
     let yGridlines = d3.axisLeft(wealthScale).ticks(11).tickSize(-plotWidth).tickFormat("");
     svgMain.append("g")
         .attr("class", "y gridlines") // Y axis
+        .attr("id", "y1") // Y axis
         .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
         .call(yGridlines);
+
+    let y2Gridlines = d3.axisLeft(diffusionScale).ticks(11).tickSize(-plotWidth).tickFormat("");
+    svgMain.append("g")
+        .attr("class", "y gridlines") // Y axis
+        .attr("id", "y2") // Y axis
+        .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
+        .style("opacity", 0)
+        .call(y2Gridlines);
 
 
     const plot = svgMain.append("g")
@@ -171,27 +199,75 @@ const technologyData = async () => {
         .delay(500).duration(2000).ease(d3.easeBackOut)
 
         .on("end", function () { // on end of transition...
-            d3.select(".y")
-                .transition() // second transition
-            // .style("opacity", 0);
+
+
+            // svgMainMargin = {
+            //     top: 30,
+            //     right: 100,
+            //     bottom: 50,
+            //     left: 80
+            // };
+
+            // plotWidth = svgMainWidth - svgMainMargin.left - svgMainMargin.right;
+
+            // wealthScale = d3.scaleLinear() //Y Axis
+            // .domain(wealthMinMax)
+            // .range([plotHeight, 0]);
+
+            svgMain.select("#y1").transition().duration(2000).delay(1000)
+                .attr("transform", "translate(" + (svgMainMargin.left + plotWidth) + "," + svgMainMargin.top + ")")
+                .style("font-size", "10px");
+
+            svgMain.selectAll("#y1.y.axis text").transition().delay(2000).duration(500)
+                .attr("transform", "translate(" + 50 + "," + 0 + ")");
+
+            svgMain.selectAll("#y1.y.axis line").transition().delay(2000).duration(500)
+                .style("opacity", 0);
+
+            svgMain.select("#y1.y.axis.label").transition().delay(700).duration(1000)
+                .style("opacity", 0)
+                .transition().duration(500)
+                .attr("transform", "rotate(90)")
+                .attr("x", svgMainHeight / 2)
+                .attr("y", -svgMainWidth + 20)
+                .style("font-size", "12px")
+                .transition().delay(200).style("opacity", 1).duration(1000);
+
+
+            d3.select("#y1.y.gridlines").transition().delay(50).duration(2000)
+                .style("opacity", 0);
+
+            svgMain.select("#y2").transition().delay(3000).duration(1000)
+                .style("opacity", 1);
+
+
+            svgMain.select("#y2.y.gridlines").transition().delay(3000).duration(1000)
+            .style("opacity", 1);
+
+            svgMain.select("#y2.y.axis.label").transition().delay(4000).duration(1000)
+                .style("opacity", 1);
+
+
+
+            // Add the scatterplot
+            plot.selectAll("dot")
+                .data(techData)
+                .enter().append("circle")
+                .attr("r", 5)
+                .attr("cx", function (d) {
+                    return yearScale(d.Year);
+                })
+                .attr("cy", function (d) {
+                    return diffusionScale(d.Diffusion);
+                })
+                .style("fill", d => colorScale(d.Category))
+                .style("opacity", 0)
+                .transition().duration(5000).style("opacity", 1).delay(5000)
+
         });;
 
 
-    // Add the scatterplot
-    plot.selectAll("dot")
-        .data(techData)
-        .enter().append("circle")
-        .attr("r", 5)
-        .attr("cx", function (d) {
-            return yearScale(d.Year);
-        })
-        .attr("cy", function (d) {
-            return diffusionScale(d.Diffusion);
-        })
-        .style("fill", d => colorScale(d.Category))
-        .on("click", function (d) {
-            console.log(d);
-        });
+
 
 
 }
