@@ -71,28 +71,42 @@ const technologyData = async () => {
         .call(xAxis);
 
 
-    let yAxis = d3.axisLeft(wealthScale); // Y axis
+    let yAxis = d3.axisLeft(wealthScale).tickFormat(d3.format("$,~g")); // Y axis
     svgMain.append("g")
         .attr("class", "y axis")
         .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
         .style("stroke-width", "2px")
         .call(yAxis);
-        
+
     //right Y Axis
-    let y2Axis = d3.axisLeft(diffusionScale);
-    svgMain.append("g")			
-        .attr("class", "y axis")	
-        .attr("transform", "translate(" + (svgMainMargin.left + plotWidth ) + "," + svgMainMargin.top + ")")	
-        .style("stroke-width", "2px")		
+    let y2Axis = d3.axisLeft(diffusionScale).tickFormat(d3.format(".0%"));
+    svgMain.append("g")
+        .attr("class", "y axis")
+        .attr("transform", "translate(" + (svgMainMargin.left + plotWidth) + "," + svgMainMargin.top + ")")
+        .style("stroke-width", "2px")
         .call(y2Axis);
-        
-      // Add the scatterplot
-    svgMain.selectAll("dot")
-      .data(techData)
-      .enter().append("circle")
-      .attr("r", 5)
-      .attr("cx", function(d) { return yearScale(d.Year); })
-      .attr("cy", function(d) { return diffusionScale(d.Diffusion); });
+
+
+
+    // x label
+    svgMain.append("text")
+        .attr("class", "x axis label")
+        .attr("x", svgMainWidth / 2)
+        .attr("y", svgMainHeight - 8)
+        .attr("font-size", "18px")
+        .attr("text-anchor", "middle")
+        .text("Year");
+
+    // y label
+    svgMain.append("text")
+        .attr("class", "y axis label")
+        .attr("x", -svgMainHeight / 2)
+        .attr("y", 20)
+        .attr("font-size", "18px")
+        .attr("text-anchor", "middle")
+        .attr("transform", "rotate(-90)")
+        .text("Generation(MWh)");
+
 
     //Gridlines 
 
@@ -117,50 +131,67 @@ const technologyData = async () => {
     wealthData.pop();
 
     let zeroArray = [];
-    for (let i=0; i<wealthData.length; i++) {
-        zeroArray.push( [yearScale(wealthData[i].TIME), wealthScale(wealthMin)])
+    for (let i = 0; i < wealthData.length; i++) {
+        zeroArray.push([yearScale(wealthData[i].TIME), wealthScale(wealthMin)])
     }
 
     let wealthArray = [];
-    for (let i=0; i<wealthData.length; i++) {
-        wealthArray.push( [ yearScale(wealthData[i].TIME), wealthScale(wealthData[i].Value) ] )
+    for (let i = 0; i < wealthData.length; i++) {
+        wealthArray.push([yearScale(wealthData[i].TIME), wealthScale(wealthData[i].Value)])
     }
 
     let len = wealthData.length;
 
-    wealthArray.push([yearScale(wealthData[len-1].TIME), wealthScale(wealthMin)  ]);
+    wealthArray.push([yearScale(wealthData[len - 1].TIME), wealthScale(wealthMin)]);
     wealthArray.push([yearScale(yearMin), wealthScale(wealthMin)]);
 
 
 
-  //3. Set up d3's line generator
+    //3. Set up d3's line generator
 
-  var line = d3.line().curve(d3.curveMonotoneX);
+    var line = d3.line().curve(d3.curveMonotoneX);
 
-  var line2 = d3.line()
-        .x(d =>  yearScale(d.TIME))
-        .y(d =>  wealthScale(d.Value))
+    var line2 = d3.line()
+        .x(d => yearScale(d.TIME))
+        .y(d => wealthScale(d.Value))
         .curve(d3.curveMonotoneX);
 
-  // d3.line() returns a *function* that accepts a datapoint and spits out the string that goes in the "d" attribute of a <path>
+    // d3.line() returns a *function* that accepts a datapoint and spits out the string that goes in the "d" attribute of a <path>
 
-  // Try adding a smoothing function after .x and .y using .curve(func) : .curve(d3.curveMonotoneX), curveStep, curveBasis, curveCardinal
+    // Try adding a smoothing function after .x and .y using .curve(func) : .curve(d3.curveMonotoneX), curveStep, curveBasis, curveCardinal
 
 
 
-  plot.append("path").attr("class","line")
-  .attr('d', line(zeroArray))
-  .style("opacity",.5)
-  .style("fill", "limegreen")
-  .transition()
-  .attr('d', line(wealthArray))
-  .delay(500).duration(2000).ease(d3.easeBackOut)
-  
-  .on("end",function() { // on end of transition...
-    d3.select(".y")
-        .transition() // second transition
-           // .style("opacity", 0);
-});;
+    plot.append("path").attr("class", "line")
+        .attr('d', line(zeroArray))
+        .style("opacity", .5)
+        .style("fill", "limegreen")
+        .transition()
+        .attr('d', line(wealthArray))
+        .delay(500).duration(2000).ease(d3.easeBackOut)
+
+        .on("end", function () { // on end of transition...
+            d3.select(".y")
+                .transition() // second transition
+            // .style("opacity", 0);
+        });;
+
+
+    // Add the scatterplot
+    plot.selectAll("dot")
+        .data(techData)
+        .enter().append("circle")
+        .attr("r", 5)
+        .attr("cx", function (d) {
+            return yearScale(d.Year);
+        })
+        .attr("cy", function (d) {
+            return diffusionScale(d.Diffusion);
+        })
+        .style("fill", d => colorScale(d.Category))
+        .on("click", function (d) {
+            console.log(d);
+        });
 
 
 }
