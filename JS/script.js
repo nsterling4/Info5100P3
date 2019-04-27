@@ -77,7 +77,22 @@ const technologyData = async () => {
         .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
         .style("stroke-width", "2px")
         .call(yAxis);
-
+        
+    //right Y Axis
+    let y2Axis = d3.axisLeft(diffusionScale);
+    svgMain.append("g")			
+        .attr("class", "y axis")	
+        .attr("transform", "translate(" + (svgMainMargin.left + plotWidth ) + "," + svgMainMargin.top + ")")	
+        .style("stroke-width", "2px")		
+        .call(y2Axis);
+        
+      // Add the scatterplot
+    svgMain.selectAll("dot")
+      .data(techData)
+      .enter().append("circle")
+      .attr("r", 5)
+      .attr("cx", function(d) { return yearScale(d.Year); })
+      .attr("cy", function(d) { return diffusionScale(d.Diffusion); });
 
     //Gridlines 
 
