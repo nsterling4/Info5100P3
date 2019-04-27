@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Legend</title>
+	<style>
+		button {
+         background:none!important;
+         color:inherit;
+         border:none;
+         padding:0!important;
+         font: inherit;
+    	   font-size: 1.3em;
+         cursor: pointer;
+    }
+    	button:hover {
+    		color: grey;
+    		border-bottom:1px solid grey;
+    	}
+      	#Household{
+          text-align: left;
+      		color:#1AF28A;
+      	}
+      	#Communication{
+          text-align: left;
+      		color:#F67E80;
+      	}
+      	#Entertainment{
+          text-align: left;
+      		color:#e9d8d0;
+      	}
+      	#Transportation{
+          text-align: left;
+      		color:#4085FA;
+      	}
+      	
+		#revHou {
+    		display:none;
+    	}
+    	#revCom {
+    		display:none;
+    	}
+    	#revEnt {
+    		display:none;
+    	}
+    	#revTra {
+    		display:none;
+    	}
+    	
+	</style>
+</head>
+
+	<div id = "subgroup">
+    <ul>
+      <button id = "Household" onclick="revFunction('revHou')">&#9660  Household
+      	<ul id="revHou">
+      		<li>Central Heating</li>
+      		<li>Electric Power</li>
+			<li>Flush Toilet</li>
+			<li>Home Air Conditioning</li>
+			<li>Microwave</li>
+			<li>Running Water</li>
+			<li>Stove</li>
+			<li>Iron</li>
+			<li>Electric Range</li>
+			<li>Washing Machine</li>
+			<li>Dishwasher</li>
+			<li>Dryer</li>
+			<li>Refrigerator</li>
+			<li>Freezer</li>
+			<li>Vacuum</li>
+			<li>Water Heater</li>
+      	</ul>
+      </button>
+    </ul>
+    <ul>
+    	<button id = "Communication" onclick="revFunction('revCom')">&#9660  Communication
+      	<ul id="revCom">
+      		<li>Landline</li>
+      		<li>Radio</li>
+			<li>Internet</li>
+			<li>Smartphone Usage</li>
+			<li>Cellular Phone</li>
+			<li>Computer</li>
+      	</ul>
+      </button>
+    </ul>
+    <ul>
+    	<button id = "Entertainment" onclick="revFunction('revEnt')">&#9660  Entertainment
+      	<ul id="revEnt">
+			<li>Television</li>
+			<li>Colour TV</li>
+			<li>Cable TV</li>
+      		<li>Videocassette Recorder</li>
+      		<li>Ebook Reader</li>
+			<li>Podcasting</li>
+			<li>Social Media Usage</li>
+			<li>Tablet</li>
+      	</ul>
+      </button>
+    </ul>
+    <ul>
+      <button id="Transportation" onclick="revFunction('revTra')">&#9660  Transportation
+        <ul id="revTra">
+          <li>Automobile</li>
+          <li>Automatic Transmission</li>
+          <li>Disk Brakes</li>
+		<li>Electronic Ignition</li>
+			<li>Power Steering</li>
+			<li>Radial Tires</li>
+        </ul>
+      </button>
+    </ul>
+
+  	<script>
+      function revFunction(currentId) {
+        var x = document.getElementById(currentId);
+        var displayValue = window.getComputedStyle(x).display;
+        if (displayValue === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+       }
+  	</script>
+
+</div>
+<body>
+</body>
+</html>
