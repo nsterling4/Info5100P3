@@ -1,0 +1,1216 @@
+Entity,Category,Year,Diffusion
+Automatic transmission,Transportation,1910,0
+Automatic transmission,Transportation,1939,0
+Automatic transmission,Transportation,1951,36
+Automatic transmission,Transportation,1952,44.5
+Automatic transmission,Transportation,1953,50
+Automatic transmission,Transportation,1954,55
+Automatic transmission,Transportation,1955,63.5
+Automatic transmission,Transportation,1956,72.3
+Automatic transmission,Transportation,1957,80
+Automatic transmission,Transportation,1958,82
+Automatic transmission,Transportation,1959,81
+Automatic transmission,Transportation,1960,78
+Automatic transmission,Transportation,1961,77
+Automatic transmission,Transportation,1962,78
+Automatic transmission,Transportation,1963,80
+Automatic transmission,Transportation,1964,82
+Automatic transmission,Transportation,1965,84
+Automatic transmission,Transportation,1966,86.5
+Automatic transmission,Transportation,1967,89.5
+Automatic transmission,Transportation,1968,93
+Automatic transmission,Transportation,1969,95
+Automatic transmission,Transportation,1970,97
+Automatic transmission,Transportation,1971,97.5
+Automatic transmission,Transportation,1972,98
+Automatic transmission,Transportation,1973,98.5
+Automatic transmission,Transportation,1974,98
+Automatic transmission,Transportation,1975,98.5
+Automatic transmission,Transportation,1976,98
+Automatic transmission,Transportation,1977,99
+Automatic transmission,Transportation,1978,100
+Automatic transmission,Transportation,1979,100
+Automatic transmission,Transportation,1980,100
+Automatic transmission,Transportation,1981,100
+Automatic transmission,Transportation,1982,100
+Automatic transmission,Transportation,1983,100
+Automatic transmission,Transportation,1984,100
+Automobile,Transportation,1915,10
+Automobile,Transportation,1916,12
+Automobile,Transportation,1917,17
+Automobile,Transportation,1918,19
+Automobile,Transportation,1919,23
+Automobile,Transportation,1920,28
+Automobile,Transportation,1921,31
+Automobile,Transportation,1922,34
+Automobile,Transportation,1923,39
+Automobile,Transportation,1924,44
+Automobile,Transportation,1925,49
+Automobile,Transportation,1926,54
+Automobile,Transportation,1927,56
+Automobile,Transportation,1928,58
+Automobile,Transportation,1929,58.5
+Automobile,Transportation,1930,59
+Automobile,Transportation,1931,56
+Automobile,Transportation,1932,53
+Automobile,Transportation,1933,50
+Automobile,Transportation,1934,51
+Automobile,Transportation,1935,52
+Automobile,Transportation,1936,54
+Automobile,Transportation,1937,55
+Automobile,Transportation,1938,54
+Automobile,Transportation,1939,54
+Automobile,Transportation,1940,55
+Automobile,Transportation,1941,57
+Automobile,Transportation,1942,53
+Automobile,Transportation,1943,49
+Automobile,Transportation,1944,47
+Automobile,Transportation,1945,46
+Automobile,Transportation,1946,48
+Automobile,Transportation,1947,51
+Automobile,Transportation,1948,53
+Automobile,Transportation,1949,55
+Automobile,Transportation,1950,58
+Automobile,Transportation,1951,60
+Automobile,Transportation,1952,60
+Automobile,Transportation,1953,62
+Automobile,Transportation,1954,65
+Automobile,Transportation,1955,68
+Automobile,Transportation,1956,72
+Automobile,Transportation,1957,74
+Automobile,Transportation,1958,71
+Automobile,Transportation,1959,73
+Automobile,Transportation,1960,75
+Automobile,Transportation,1961,76
+Automobile,Transportation,1962,75
+Automobile,Transportation,1963,79
+Automobile,Transportation,1964,79
+Automobile,Transportation,1965,79
+Automobile,Transportation,1966,79
+Automobile,Transportation,1967,78
+Automobile,Transportation,1968,78.5
+Automobile,Transportation,1969,79
+Automobile,Transportation,1970,80
+Automobile,Transportation,1971,80
+Automobile,Transportation,1972,81
+Automobile,Transportation,1973,82
+Automobile,Transportation,1974,83
+Automobile,Transportation,1975,83
+Automobile,Transportation,1976,84
+Automobile,Transportation,1977,85
+Automobile,Transportation,1978,85
+Automobile,Transportation,1979,85
+Automobile,Transportation,1980,86
+Automobile,Transportation,1981,86
+Automobile,Transportation,1982,86
+Automobile,Transportation,1983,86.5
+Automobile,Transportation,1984,87
+Automobile,Transportation,1985,88
+Automobile,Transportation,1986,88
+Automobile,Transportation,1987,89
+Automobile,Transportation,1988,89.5
+Automobile,Transportation,1989,90
+Automobile,Transportation,1990,91
+Automobile,Transportation,1991,91
+Automobile,Transportation,1992,91
+Automobile,Transportation,1993,92
+Automobile,Transportation,1994,91
+Automobile,Transportation,1995,91
+Automobile,Transportation,1996,92
+Automobile,Transportation,1997,92
+Automobile,Transportation,1998,92
+Automobile,Transportation,1999,91
+Automobile,Transportation,2000,92
+Automobile,Transportation,2001,92
+Automobile,Transportation,2002,91
+Automobile,Transportation,2003,91
+Automobile,Transportation,2004,91
+Automobile,Transportation,2005,91
+Cable TV,Entertainment,1968,7.6
+Cable TV,Entertainment,1969,8.7
+Cable TV,Entertainment,1970,9.6
+Cable TV,Entertainment,1971,11.1
+Cable TV,Entertainment,1972,13
+Cable TV,Entertainment,1973,15.5
+Cable TV,Entertainment,1974,15.5
+Cable TV,Entertainment,1975,16.7
+Cable TV,Entertainment,1976,17.7
+Cable TV,Entertainment,1977,18.97
+Cable TV,Entertainment,1978,21.88
+Cable TV,Entertainment,1979,28.32
+Cable TV,Entertainment,1980,35.26
+Cable TV,Entertainment,1981,40.4
+Cable TV,Entertainment,1982,43.53
+Cable TV,Entertainment,1983,45.94
+Cable TV,Entertainment,1984,47.94
+Cable TV,Entertainment,1985,50.32
+Cable TV,Entertainment,1986,53.68
+Cable TV,Entertainment,1987,57.26
+Cable TV,Entertainment,1988,58.78
+Cable TV,Entertainment,1989,59.05
+Cable TV,Entertainment,1990,59.9
+Cable TV,Entertainment,1991,60.9
+Cable TV,Entertainment,1992,61.85
+Cable TV,Entertainment,1993,63.6
+Cable TV,Entertainment,1994,64.9
+Cable TV,Entertainment,1995,65.27
+Cable TV,Entertainment,1996,65.36
+Cable TV,Entertainment,1997,65.07
+Cellular phone,Communication,1994,10
+Cellular phone,Communication,1995,12
+Cellular phone,Communication,1996,16
+Cellular phone,Communication,1997,21
+Cellular phone,Communication,1998,36.3
+Cellular phone,Communication,1999,34
+Cellular phone,Communication,2000,42
+Cellular phone,Communication,2001,49
+Cellular phone,Communication,2002,56
+Cellular phone,Communication,2003,62.8
+Cellular phone,Communication,2004,63
+Cellular phone,Communication,2005,71.3
+Cellular phone,Communication,2006,67
+Cellular phone,Communication,2007,73
+Cellular phone,Communication,2008,75
+Cellular phone,Communication,2009,84
+Cellular phone,Communication,2010,87.2
+Cellular phone,Communication,2011,89
+Cellular phone,Communication,2012,87
+Cellular phone,Communication,2013,89
+Cellular phone,Communication,2014,91
+Cellular phone,Communication,2015,92
+Cellular phone,Communication,2016,92
+Central heating,Household,1900,0
+Central heating,Household,1910,0
+Central heating,Household,1920,1
+Central heating,Household,1940,42
+Central heating,Household,1950,50
+Central heating,Household,1960,66
+Central heating,Household,1970,78
+Colour TV,Entertainment,1966,10
+Colour TV,Entertainment,1967,15
+Colour TV,Entertainment,1968,21
+Colour TV,Entertainment,1969,25
+Colour TV,Entertainment,1970,31
+Colour TV,Entertainment,1971,39
+Colour TV,Entertainment,1972,43
+Colour TV,Entertainment,1973,48
+Colour TV,Entertainment,1974,57
+Colour TV,Entertainment,1975,64
+Colour TV,Entertainment,1976,69
+Colour TV,Entertainment,1977,74
+Colour TV,Entertainment,1978,75
+Colour TV,Entertainment,1979,78
+Colour TV,Entertainment,1980,79
+Colour TV,Entertainment,1981,80
+Colour TV,Entertainment,1982,85
+Colour TV,Entertainment,1983,88
+Colour TV,Entertainment,1984,89
+Colour TV,Entertainment,1985,90
+Colour TV,Entertainment,1986,90.5
+Colour TV,Entertainment,1987,91
+Colour TV,Entertainment,1988,93
+Colour TV,Entertainment,1989,94
+Colour TV,Entertainment,1990,96
+Colour TV,Entertainment,1991,96
+Colour TV,Entertainment,1992,95
+Colour TV,Entertainment,1993,95
+Colour TV,Entertainment,1994,96
+Colour TV,Entertainment,1995,94
+Colour TV,Entertainment,1996,96
+Colour TV,Entertainment,1997,95
+Colour TV,Entertainment,1998,94
+Colour TV,Entertainment,1999,95
+Colour TV,Entertainment,2000,94
+Colour TV,Entertainment,2001,94
+Colour TV,Entertainment,2002,96
+Colour TV,Entertainment,2003,95
+Colour TV,Entertainment,2004,97
+Colour TV,Entertainment,2005,96
+Computer,Communication,1992,20.7
+Computer,Communication,1998,42
+Computer,Communication,2003,63.1
+Computer,Communication,2005,67.1
+Computer,Communication,2010,75.2
+Computer,Communication,2011,78
+Dishwasher,Household,1922,1.1
+Dishwasher,Household,1923,1
+Dishwasher,Household,1924,1.8
+Dishwasher,Household,1931,0.6
+Dishwasher,Household,1948,1.2
+Dishwasher,Household,1949,1.5
+Dishwasher,Household,1950,2
+Dishwasher,Household,1951,2.6
+Dishwasher,Household,1952,3
+Dishwasher,Household,1953,3.2
+Dishwasher,Household,1954,3.5
+Dishwasher,Household,1955,4
+Dishwasher,Household,1956,4.6
+Dishwasher,Household,1957,5.2
+Dishwasher,Household,1958,5.8
+Dishwasher,Household,1959,6.3
+Dishwasher,Household,1960,7.1
+Dishwasher,Household,1961,7.9
+Dishwasher,Household,1962,8.9
+Dishwasher,Household,1963,9
+Dishwasher,Household,1964,11.8
+Dishwasher,Household,1965,13.5
+Dishwasher,Household,1966,15.7
+Dishwasher,Household,1967,18.1
+Dishwasher,Household,1968,20.8
+Dishwasher,Household,1969,23.7
+Dishwasher,Household,1970,26.5
+Dishwasher,Household,1971,29.6
+Dishwasher,Household,1972,32
+Dishwasher,Household,1973,34.3
+Dishwasher,Household,1974,36.6
+Dishwasher,Household,1975,38.3
+Dishwasher,Household,1976,39.6
+Dishwasher,Household,1978,41.9
+Dishwasher,Household,1992,49.3
+Dishwasher,Household,1998,56
+Dishwasher,Household,2003,62.3
+Dishwasher,Household,2005,64
+Dishwasher,Household,2010,69.4
+Dishwasher,Household,2011,69.3
+Disk brakes,Transportation,1966,1
+Disk brakes,Transportation,1967,3.5
+Disk brakes,Transportation,1968,7.3
+Disk brakes,Transportation,1969,15.2
+Disk brakes,Transportation,1970,26.5
+Disk brakes,Transportation,1971,43.5
+Disk brakes,Transportation,1972,58.5
+Disk brakes,Transportation,1973,74
+Disk brakes,Transportation,1974,81
+Disk brakes,Transportation,1975,87.5
+Disk brakes,Transportation,1976,92
+Disk brakes,Transportation,1977,97
+Disk brakes,Transportation,1978,99
+Disk brakes,Transportation,1979,100
+Disk brakes,Transportation,1980,100
+Disk brakes,Transportation,1981,99
+Disk brakes,Transportation,1982,97.5
+Disk brakes,Transportation,1983,99
+Disk brakes,Transportation,1984,100
+Dryer,Household,1950,1
+Dryer,Household,1960,11
+Dryer,Household,1970,28
+Dryer,Household,1973,40
+Dryer,Household,1978,43
+Dryer,Household,1983,49
+Dryer,Household,1986,48
+Dryer,Household,1992,77.9
+Dryer,Household,1998,86.8
+Dryer,Household,2003,89.1
+Dryer,Household,2005,81.2
+Dryer,Household,2010,83.2
+Dryer,Household,2011,83.4
+Ebook reader,Entertainment,2009,2
+Ebook reader,Entertainment,2010,5
+Ebook reader,Entertainment,2011,10
+Ebook reader,Entertainment,2012,19
+Ebook reader,Entertainment,2013,24
+Ebook reader,Entertainment,2015,19
+Ebook reader,Entertainment,2016,22
+Electric Range,Household,1933,5
+Electric Range,Household,1950,14
+Electric Range,Household,1960,30
+Electric Range,Household,1970,40
+Electric Range,Household,1975,45
+Electric Range,Household,1980,50
+Electric Range,Household,1985,53
+Electric Range,Household,1986,57
+Electric power,Household,1908,10
+Electric power,Household,1909,10.67
+Electric power,Household,1910,12.33
+Electric power,Household,1911,14
+Electric power,Household,1912,16
+Electric power,Household,1913,18
+Electric power,Household,1914,19
+Electric power,Household,1915,20
+Electric power,Household,1916,22
+Electric power,Household,1917,24
+Electric power,Household,1918,27
+Electric power,Household,1919,30
+Electric power,Household,1920,33.5
+Electric power,Household,1921,37
+Electric power,Household,1922,40
+Electric power,Household,1923,43
+Electric power,Household,1924,49
+Electric power,Household,1925,52
+Electric power,Household,1926,55
+Electric power,Household,1927,60
+Electric power,Household,1928,64
+Electric power,Household,1929,68
+Electric power,Household,1930,68
+Electric power,Household,1931,68
+Electric power,Household,1932,67
+Electric power,Household,1933,67
+Electric power,Household,1934,67
+Electric power,Household,1935,68.5
+Electric power,Household,1936,70
+Electric power,Household,1937,73
+Electric power,Household,1938,75
+Electric power,Household,1939,76.5
+Electric power,Household,1940,78
+Electric power,Household,1941,79.5
+Electric power,Household,1942,81
+Electric power,Household,1943,81
+Electric power,Household,1944,83
+Electric power,Household,1945,85
+Electric power,Household,1946,85.5
+Electric power,Household,1947,86
+Electric power,Household,1948,89
+Electric power,Household,1949,93
+Electric power,Household,1950,94
+Electric power,Household,1951,95
+Electric power,Household,1952,96
+Electric power,Household,1953,97
+Electric power,Household,1954,97.67
+Electric power,Household,1955,98.33
+Electric power,Household,1956,99
+Electric power,Household,1957,99
+Electric power,Household,1958,99
+Electric power,Household,1959,99
+Electric power,Household,1960,99
+Electric power,Household,1961,99
+Electric power,Household,1962,99
+Electric power,Household,1963,99
+Electric power,Household,1964,99
+Electric power,Household,1965,99
+Electric power,Household,1966,99
+Electric power,Household,1967,99
+Electric power,Household,1968,99
+Electric power,Household,1969,99
+Electric power,Household,1970,99
+Electric power,Household,1971,99
+Electric power,Household,1972,99
+Electric power,Household,1973,99
+Electric power,Household,1974,99
+Electric power,Household,1975,99
+Electric power,Household,1976,99
+Electric power,Household,1977,99
+Electric power,Household,1978,99
+Electric power,Household,1979,99
+Electric power,Household,1980,99
+Electric power,Household,1981,99
+Electric power,Household,1982,99
+Electric power,Household,1983,99
+Electric power,Household,1984,99
+Electric power,Household,1985,99
+Electric power,Household,1986,99
+Electric power,Household,1987,99
+Electric power,Household,1988,99
+Electric power,Household,1989,99
+Electric power,Household,1990,99
+Electric power,Household,1991,99
+Electric power,Household,1992,99
+Electric power,Household,1993,99
+Electric power,Household,1994,99
+Electric power,Household,1995,99
+Electric power,Household,1996,99
+Electric power,Household,1997,99
+Electric power,Household,1998,99
+Electric power,Household,1999,99
+Electric power,Household,2000,99
+Electric power,Household,2001,99
+Electric power,Household,2002,99
+Electric power,Household,2003,99
+Electric power,Household,2004,99
+Electric power,Household,2005,99
+Electronic ignition,Transportation,1962,0
+Electronic ignition,Transportation,1977,2
+Electronic ignition,Transportation,1978,5
+Electronic ignition,Transportation,1979,11
+Electronic ignition,Transportation,1980,11
+Electronic ignition,Transportation,1981,45
+Electronic ignition,Transportation,1982,70
+Electronic ignition,Transportation,1983,98
+Electronic ignition,Transportation,1984,100
+Flush toilet,Household,1860,1
+Flush toilet,Household,1880,7
+Flush toilet,Household,1890,13
+Flush toilet,Household,1900,15
+Flush toilet,Household,1920,20
+Flush toilet,Household,1931,51
+Flush toilet,Household,1940,60
+Flush toilet,Household,1950,71
+Flush toilet,Household,1960,87
+Flush toilet,Household,1970,96
+Flush toilet,Household,1980,98
+Flush toilet,Household,1989,100
+Freezer,Household,1950,6
+Freezer,Household,1960,22
+Freezer,Household,1965,26
+Freezer,Household,1970,30
+Freezer,Household,1978,38
+Freezer,Household,1982,42
+Freezer,Household,1992,37.1
+Freezer,Household,1998,34.9
+Freezer,Household,2003,36.9
+Freezer,Household,2005,36.6
+Freezer,Household,2010,37.9
+Freezer,Household,2011,35.8
+Home air conditioning,Household,1957,10
+Home air conditioning,Household,1958,12
+Home air conditioning,Household,1959,12
+Home air conditioning,Household,1960,12
+Home air conditioning,Household,1961,13
+Home air conditioning,Household,1962,14
+Home air conditioning,Household,1963,14
+Home air conditioning,Household,1964,16
+Home air conditioning,Household,1965,17
+Home air conditioning,Household,1966,19
+Home air conditioning,Household,1967,21
+Home air conditioning,Household,1968,25
+Home air conditioning,Household,1969,31
+Home air conditioning,Household,1970,37
+Home air conditioning,Household,1971,44
+Home air conditioning,Household,1972,47
+Home air conditioning,Household,1973,49
+Home air conditioning,Household,1974,50
+Home air conditioning,Household,1975,51
+Home air conditioning,Household,1976,52
+Home air conditioning,Household,1977,53
+Home air conditioning,Household,1978,55
+Home air conditioning,Household,1979,55
+Home air conditioning,Household,1980,56.5
+Home air conditioning,Household,1981,58
+Home air conditioning,Household,1982,58
+Home air conditioning,Household,1983,58
+Home air conditioning,Household,1984,60
+Home air conditioning,Household,1985,61
+Home air conditioning,Household,1986,62
+Home air conditioning,Household,1987,63
+Home air conditioning,Household,1988,65
+Home air conditioning,Household,1989,68
+Home air conditioning,Household,1990,69
+Home air conditioning,Household,1991,70
+Home air conditioning,Household,1992,69
+Home air conditioning,Household,1993,68
+Home air conditioning,Household,1994,69
+Home air conditioning,Household,1995,71
+Home air conditioning,Household,1996,72
+Home air conditioning,Household,1997,73
+Home air conditioning,Household,1998,74
+Home air conditioning,Household,1999,75
+Home air conditioning,Household,2000,76
+Home air conditioning,Household,2001,78
+Home air conditioning,Household,2002,83
+Home air conditioning,Household,2003,87
+Home air conditioning,Household,2004,89
+Home air conditioning,Household,2005,89
+Home air conditioning,Household,2006,89
+Home air conditioning,Household,2007,89
+Home air conditioning,Household,2008,88
+Home air conditioning,Household,2009,87
+Home air conditioning,Household,2010,88.5
+Home air conditioning,Household,2011,88.7
+Household refrigerator,Household,1931,10
+Household refrigerator,Household,1932,14
+Household refrigerator,Household,1933,17
+Household refrigerator,Household,1934,20
+Household refrigerator,Household,1935,24
+Household refrigerator,Household,1936,27
+Household refrigerator,Household,1937,33
+Household refrigerator,Household,1938,38
+Household refrigerator,Household,1939,43
+Household refrigerator,Household,1940,44
+Household refrigerator,Household,1941,47
+Household refrigerator,Household,1942,50
+Household refrigerator,Household,1943,52
+Household refrigerator,Household,1944,55
+Household refrigerator,Household,1945,56
+Household refrigerator,Household,1946,62
+Household refrigerator,Household,1947,67
+Household refrigerator,Household,1948,71
+Household refrigerator,Household,1949,76
+Household refrigerator,Household,1950,80
+Household refrigerator,Household,1951,83
+Household refrigerator,Household,1952,86
+Household refrigerator,Household,1953,88
+Household refrigerator,Household,1954,91
+Household refrigerator,Household,1955,93
+Household refrigerator,Household,1956,95
+Household refrigerator,Household,1957,96
+Household refrigerator,Household,1958,97
+Household refrigerator,Household,1959,97.4
+Household refrigerator,Household,1960,97.8
+Household refrigerator,Household,1961,98.2
+Household refrigerator,Household,1962,98.6
+Household refrigerator,Household,1963,99
+Household refrigerator,Household,1964,99
+Household refrigerator,Household,1965,99
+Household refrigerator,Household,1966,99
+Household refrigerator,Household,1967,99
+Household refrigerator,Household,1968,99
+Household refrigerator,Household,1969,99
+Household refrigerator,Household,1970,99
+Household refrigerator,Household,1971,99
+Household refrigerator,Household,1972,99
+Household refrigerator,Household,1973,99
+Household refrigerator,Household,1974,99
+Household refrigerator,Household,1975,99
+Household refrigerator,Household,1976,99
+Household refrigerator,Household,1977,99
+Household refrigerator,Household,1978,99
+Household refrigerator,Household,1979,99
+Household refrigerator,Household,1980,99
+Household refrigerator,Household,1981,99
+Household refrigerator,Household,1982,99
+Household refrigerator,Household,1983,99
+Household refrigerator,Household,1984,99
+Household refrigerator,Household,1985,99
+Household refrigerator,Household,1986,99
+Household refrigerator,Household,1987,99
+Household refrigerator,Household,1988,99
+Household refrigerator,Household,1989,99
+Household refrigerator,Household,1990,99
+Household refrigerator,Household,1991,99
+Household refrigerator,Household,1992,99
+Household refrigerator,Household,1993,99
+Household refrigerator,Household,1994,99
+Household refrigerator,Household,1995,99
+Household refrigerator,Household,1996,99
+Household refrigerator,Household,1997,99
+Household refrigerator,Household,1998,99
+Household refrigerator,Household,1999,99
+Household refrigerator,Household,2000,99
+Household refrigerator,Household,2001,99
+Household refrigerator,Household,2002,99
+Household refrigerator,Household,2003,99
+Household refrigerator,Household,2004,99
+Household refrigerator,Household,2005,99
+Household refrigerator,Household,2010,99.3
+Household refrigerator,Household,2011,99.2
+Internet,Communication,1993,10
+Internet,Communication,1994,11
+Internet,Communication,1995,13
+Internet,Communication,1996,16
+Internet,Communication,1997,19
+Internet,Communication,1998,25
+Internet,Communication,1999,34
+Internet,Communication,2000,42
+Internet,Communication,2001,49
+Internet,Communication,2002,52
+Internet,Communication,2003,54
+Internet,Communication,2004,57
+Internet,Communication,2005,61
+Internet,Communication,2006,62
+Internet,Communication,2007,65
+Internet,Communication,2008,68
+Internet,Communication,2009,70
+Internet,Communication,2010,74
+Internet,Communication,2011,76
+Internet,Communication,2012,81
+Internet,Communication,2013,82
+Internet,Communication,2014,83
+Internet,Communication,2015,85
+Internet,Communication,2016,88
+Iron,Household,1933,96
+Iron,Household,1965,99
+Iron,Household,1970,100
+Landline,Communication,1903,10
+Landline,Communication,1904,12
+Landline,Communication,1905,14
+Landline,Communication,1906,18
+Landline,Communication,1907,19.5
+Landline,Communication,1908,21
+Landline,Communication,1909,23
+Landline,Communication,1910,24.5
+Landline,Communication,1911,26
+Landline,Communication,1912,27
+Landline,Communication,1913,28
+Landline,Communication,1914,29
+Landline,Communication,1915,30
+Landline,Communication,1916,31
+Landline,Communication,1917,32
+Landline,Communication,1918,33
+Landline,Communication,1919,34
+Landline,Communication,1920,34
+Landline,Communication,1921,35
+Landline,Communication,1922,35
+Landline,Communication,1923,37
+Landline,Communication,1924,37
+Landline,Communication,1925,38
+Landline,Communication,1926,39
+Landline,Communication,1927,39
+Landline,Communication,1928,41
+Landline,Communication,1929,41
+Landline,Communication,1930,39.5
+Landline,Communication,1931,38
+Landline,Communication,1932,35
+Landline,Communication,1933,32
+Landline,Communication,1934,31
+Landline,Communication,1935,32
+Landline,Communication,1936,33
+Landline,Communication,1937,34
+Landline,Communication,1938,34.5
+Landline,Communication,1939,35
+Landline,Communication,1940,37
+Landline,Communication,1941,39
+Landline,Communication,1942,41.5
+Landline,Communication,1943,44
+Landline,Communication,1944,45
+Landline,Communication,1945,46
+Landline,Communication,1946,50
+Landline,Communication,1947,54
+Landline,Communication,1948,58
+Landline,Communication,1949,60
+Landline,Communication,1950,62
+Landline,Communication,1951,63.5
+Landline,Communication,1952,65
+Landline,Communication,1953,67.5
+Landline,Communication,1954,70
+Landline,Communication,1955,71.67
+Landline,Communication,1956,73.33
+Landline,Communication,1957,75
+Landline,Communication,1958,76.5
+Landline,Communication,1959,78
+Landline,Communication,1960,78.5
+Landline,Communication,1961,79
+Landline,Communication,1962,80
+Landline,Communication,1963,81
+Landline,Communication,1964,82
+Landline,Communication,1965,85
+Landline,Communication,1966,86
+Landline,Communication,1967,87
+Landline,Communication,1968,88.5
+Landline,Communication,1969,90
+Landline,Communication,1970,87
+Landline,Communication,1971,87.5
+Landline,Communication,1972,88
+Landline,Communication,1973,88.67
+Landline,Communication,1974,89.33
+Landline,Communication,1975,90
+Landline,Communication,1976,90.5
+Landline,Communication,1977,91
+Landline,Communication,1978,91.5
+Landline,Communication,1979,92
+Landline,Communication,1980,92.5
+Landline,Communication,1981,93
+Landline,Communication,1982,92.5
+Landline,Communication,1983,92
+Landline,Communication,1984,92
+Landline,Communication,1985,92
+Landline,Communication,1986,92.25
+Landline,Communication,1987,92.5
+Landline,Communication,1988,92.75
+Landline,Communication,1989,93
+Landline,Communication,1990,93.5
+Landline,Communication,1991,94
+Landline,Communication,1992,94
+Landline,Communication,1993,94
+Landline,Communication,1994,94
+Landline,Communication,1995,94
+Landline,Communication,1996,94
+Landline,Communication,1997,94
+Landline,Communication,1998,94
+Landline,Communication,1999,94
+Landline,Communication,2000,94
+Landline,Communication,2001,94.5
+Landline,Communication,2002,95
+Landline,Communication,2003,94
+Landline,Communication,2004,93
+Landline,Communication,2005,92
+Landline,Communication,2009,83
+Landline,Communication,2010,75
+Landline,Communication,2011,70.5
+Landline,Communication,2012,75
+Landline,Communication,2013,66
+Landline,Communication,2014,65
+Microwave,Household,1975,3
+Microwave,Household,1980,7
+Microwave,Household,1982,20
+Microwave,Household,1983,34
+Microwave,Household,1986,60
+Microwave,Household,1992,82.2
+Microwave,Household,1998,90.7
+Microwave,Household,2003,95.9
+Microwave,Household,2005,96.4
+Microwave,Household,2010,97.1
+Microwave,Household,2011,96.8
+Podcasting,Entertainment,2006,11
+Podcasting,Entertainment,2007,13
+Podcasting,Entertainment,2008,18
+Podcasting,Entertainment,2009,22
+Podcasting,Entertainment,2010,23
+Podcasting,Entertainment,2011,25
+Podcasting,Entertainment,2012,29
+Podcasting,Entertainment,2013,27
+Podcasting,Entertainment,2014,30
+Podcasting,Entertainment,2015,33
+Power steering,Transportation,1951,0
+Power steering,Transportation,1952,2
+Power steering,Transportation,1953,6
+Power steering,Transportation,1954,12
+Power steering,Transportation,1955,19
+Power steering,Transportation,1956,25
+Power steering,Transportation,1957,32
+Power steering,Transportation,1958,39
+Power steering,Transportation,1959,43
+Power steering,Transportation,1960,43
+Power steering,Transportation,1961,42
+Power steering,Transportation,1962,43
+Power steering,Transportation,1963,48
+Power steering,Transportation,1964,53
+Power steering,Transportation,1965,59
+Power steering,Transportation,1966,65
+Power steering,Transportation,1967,73
+Power steering,Transportation,1968,80
+Power steering,Transportation,1969,87
+Power steering,Transportation,1970,91
+Power steering,Transportation,1971,91.5
+Power steering,Transportation,1972,92
+Power steering,Transportation,1973,93
+Power steering,Transportation,1974,93.5
+Power steering,Transportation,1975,95
+Power steering,Transportation,1976,96
+Power steering,Transportation,1977,99
+Power steering,Transportation,1978,100
+Power steering,Transportation,1979,100
+Power steering,Transportation,1980,99
+Power steering,Transportation,1981,96
+Power steering,Transportation,1982,95
+Power steering,Transportation,1983,97
+Power steering,Transportation,1984,100
+Radial tires,Transportation,1972,0.5
+Radial tires,Transportation,1973,4.5
+Radial tires,Transportation,1974,16
+Radial tires,Transportation,1975,42.5
+Radial tires,Transportation,1976,64
+Radial tires,Transportation,1977,81
+Radial tires,Transportation,1978,82
+Radial tires,Transportation,1979,87
+Radial tires,Transportation,1980,91
+Radial tires,Transportation,1981,95.5
+Radial tires,Transportation,1982,98.5
+Radial tires,Transportation,1983,100
+Radial tires,Transportation,1984,100
+Radio,Communication,1925,10
+Radio,Communication,1926,17
+Radio,Communication,1927,19
+Radio,Communication,1928,28
+Radio,Communication,1929,36
+Radio,Communication,1930,45
+Radio,Communication,1931,52
+Radio,Communication,1932,60
+Radio,Communication,1933,63
+Radio,Communication,1934,65
+Radio,Communication,1935,68
+Radio,Communication,1936,72
+Radio,Communication,1937,74
+Radio,Communication,1938,78
+Radio,Communication,1939,80
+Radio,Communication,1940,81
+Radio,Communication,1941,82
+Radio,Communication,1942,84
+Radio,Communication,1943,84
+Radio,Communication,1944,87
+Radio,Communication,1945,88
+Radio,Communication,1946,89
+Radio,Communication,1947,92
+Radio,Communication,1948,92
+Radio,Communication,1949,93
+Radio,Communication,1950,92
+Radio,Communication,1951,92
+Radio,Communication,1952,92
+Radio,Communication,1953,93
+Radio,Communication,1954,96
+Radio,Communication,1955,96
+Radio,Communication,1956,96
+Radio,Communication,1957,96
+Radio,Communication,1958,96
+Radio,Communication,1959,96
+Radio,Communication,1960,95
+Radio,Communication,1961,95
+Radio,Communication,1962,94
+Radio,Communication,1963,95
+Radio,Communication,1964,96
+Radio,Communication,1965,96
+Radio,Communication,1966,96
+Radio,Communication,1967,96
+Radio,Communication,1968,96
+Radio,Communication,1969,97
+Radio,Communication,1970,98
+Radio,Communication,1971,99
+Radio,Communication,1972,99
+Radio,Communication,1973,99
+Radio,Communication,1974,99
+Radio,Communication,1975,99
+Radio,Communication,1976,99
+Radio,Communication,1977,99
+Radio,Communication,1978,99
+Radio,Communication,1979,99
+Radio,Communication,1980,99
+Radio,Communication,1981,99
+Radio,Communication,1982,99
+Radio,Communication,1983,99
+Radio,Communication,1984,99
+Radio,Communication,1985,99
+Radio,Communication,1986,99
+Radio,Communication,1987,99
+Radio,Communication,1988,99
+Radio,Communication,1989,99
+Radio,Communication,1990,99
+Radio,Communication,1991,99
+Radio,Communication,1992,99
+Radio,Communication,1993,99
+Radio,Communication,1994,99
+Radio,Communication,1995,99
+Radio,Communication,1996,99
+Radio,Communication,1997,99
+Radio,Communication,1998,99
+Radio,Communication,1999,99
+Radio,Communication,2000,99
+Radio,Communication,2001,99
+Radio,Communication,2002,99
+Radio,Communication,2003,99
+Radio,Communication,2004,99
+Radio,Communication,2005,99
+Refrigerator,Household,1925,1
+Refrigerator,Household,1926,2.4
+Refrigerator,Household,1927,4.3
+Refrigerator,Household,1928,6.4
+Refrigerator,Household,1929,9.4
+Refrigerator,Household,1930,12.8
+Refrigerator,Household,1931,17.1
+Refrigerator,Household,1932,21.6
+Refrigerator,Household,1933,24.7
+Refrigerator,Household,1934,29.3
+Refrigerator,Household,1935,34.2
+Refrigerator,Household,1936,41.1
+Refrigerator,Household,1937,49.4
+Refrigerator,Household,1938,51.7
+Refrigerator,Household,1939,56
+Refrigerator,Household,1940,63
+Refrigerator,Household,1941,72
+Refrigerator,Household,1942,71.8
+Refrigerator,Household,1943,70.9
+Refrigerator,Household,1944,69.6
+Refrigerator,Household,1945,67.5
+Refrigerator,Household,1946,69.1
+Refrigerator,Household,1947,71.2
+Refrigerator,Household,1948,76.6
+Refrigerator,Household,1949,79.2
+Refrigerator,Household,1950,86.4
+Refrigerator,Household,1951,86.7
+Refrigerator,Household,1952,89.2
+Refrigerator,Household,1953,90.4
+Refrigerator,Household,1954,92.4
+Refrigerator,Household,1955,94.1
+Refrigerator,Household,1956,96
+Refrigerator,Household,1957,97.3
+Refrigerator,Household,1958,97.7
+Refrigerator,Household,1959,98
+Refrigerator,Household,1960,98.2
+Refrigerator,Household,1961,98.3
+Refrigerator,Household,1962,99.5
+Refrigerator,Household,1963,99.1
+Refrigerator,Household,1964,99.3
+Refrigerator,Household,1965,99.5
+Refrigerator,Household,1966,99.6
+Refrigerator,Household,1967,99.7
+Refrigerator,Household,1968,99.8
+Refrigerator,Household,1969,99.8
+Refrigerator,Household,1970,99.8
+Refrigerator,Household,1971,99.8
+Refrigerator,Household,1972,99.9
+Refrigerator,Household,1973,99.9
+Refrigerator,Household,1974,99.9
+Refrigerator,Household,1975,99.9
+Refrigerator,Household,1976,99.8
+Refrigerator,Household,1978,99.7
+Running water,Household,1890,24
+Running water,Household,1940,70
+Running water,Household,1950,83
+Running water,Household,1960,93
+Running water,Household,1970,98
+Running water,Household,1980,99
+Running water,Household,1989,100
+Smartphone usage,Communication,2011,35
+Smartphone usage,Communication,2012,45
+Smartphone usage,Communication,2013,58
+Smartphone usage,Communication,2014,58
+Smartphone usage,Communication,2015,69
+Smartphone usage,Communication,2016,77
+Social media usage,Entertainment,2005,5
+Social media usage,Entertainment,2006,11
+Social media usage,Entertainment,2007,15
+Social media usage,Entertainment,2008,21
+Social media usage,Entertainment,2009,37
+Social media usage,Entertainment,2010,48
+Social media usage,Entertainment,2011,50
+Social media usage,Entertainment,2012,59
+Social media usage,Entertainment,2013,63
+Social media usage,Entertainment,2014,62
+Social media usage,Entertainment,2015,65
+Social media usage,Entertainment,2016,69
+Stove,Household,1900,10
+Stove,Household,1901,10.5
+Stove,Household,1902,11
+Stove,Household,1903,11.5
+Stove,Household,1904,12
+Stove,Household,1905,12
+Stove,Household,1906,13
+Stove,Household,1907,14
+Stove,Household,1908,14.5
+Stove,Household,1909,15
+Stove,Household,1910,16
+Stove,Household,1911,16.5
+Stove,Household,1912,17
+Stove,Household,1913,17
+Stove,Household,1914,17
+Stove,Household,1915,18
+Stove,Household,1916,18.33
+Stove,Household,1917,18.67
+Stove,Household,1918,19
+Stove,Household,1919,19.5
+Stove,Household,1920,20
+Stove,Household,1921,22
+Stove,Household,1922,23
+Stove,Household,1923,24
+Stove,Household,1924,25
+Stove,Household,1925,27.5
+Stove,Household,1926,30
+Stove,Household,1927,32
+Stove,Household,1928,34
+Stove,Household,1929,35
+Stove,Household,1930,36
+Stove,Household,1931,37
+Stove,Household,1932,37
+Stove,Household,1933,37.5
+Stove,Household,1934,38
+Stove,Household,1935,40
+Stove,Household,1936,45
+Stove,Household,1937,50
+Stove,Household,1938,50
+Stove,Household,1939,50
+Stove,Household,1940,53
+Stove,Household,1941,55
+Stove,Household,1942,57
+Stove,Household,1943,58
+Stove,Household,1944,59
+Stove,Household,1945,59
+Stove,Household,1946,61
+Stove,Household,1947,64
+Stove,Household,1948,67
+Stove,Household,1949,70
+Stove,Household,1950,74
+Stove,Household,1951,77
+Stove,Household,1952,80
+Stove,Household,1953,84
+Stove,Household,1954,85.5
+Stove,Household,1955,87
+Stove,Household,1956,88.5
+Stove,Household,1957,90
+Stove,Household,1958,93
+Stove,Household,1959,94
+Stove,Household,1960,95
+Stove,Household,1961,95.5
+Stove,Household,1962,96
+Stove,Household,1963,96
+Stove,Household,1964,96.5
+Stove,Household,1965,97
+Stove,Household,1966,97.33
+Stove,Household,1967,97.67
+Stove,Household,1968,98
+Stove,Household,1969,98
+Stove,Household,1970,98.33
+Stove,Household,1971,98.67
+Stove,Household,1972,99
+Stove,Household,1973,99
+Stove,Household,1974,99
+Stove,Household,1975,99
+Stove,Household,1976,99
+Stove,Household,1977,99
+Stove,Household,1978,99
+Stove,Household,1979,99
+Stove,Household,1980,99
+Stove,Household,1981,99
+Stove,Household,1982,99
+Stove,Household,1983,99
+Stove,Household,1984,99
+Stove,Household,1985,99
+Stove,Household,1986,99
+Stove,Household,1987,99
+Stove,Household,1988,99
+Stove,Household,1989,99
+Stove,Household,1990,99
+Stove,Household,1991,99
+Stove,Household,1992,99
+Stove,Household,1993,99
+Stove,Household,1994,99
+Stove,Household,1995,99
+Stove,Household,1996,99
+Stove,Household,1997,99
+Stove,Household,1998,99
+Stove,Household,1999,99
+Stove,Household,2000,99
+Stove,Household,2001,99
+Stove,Household,2002,99
+Stove,Household,2003,99
+Stove,Household,2004,99
+Stove,Household,2005,99
+Stove,Household,2010,98.6
+Stove,Household,2011,98.6
+Tablet,Entertainment,2010,3
+Tablet,Entertainment,2011,10
+Tablet,Entertainment,2012,25
+Tablet,Entertainment,2013,34
+Tablet,Entertainment,2014,39
+Tablet,Entertainment,2015,45
+Tablet,Entertainment,2016,51
+Television,Entertainment,1992,96.6
+Television,Entertainment,1998,98.4
+Television,Entertainment,2003,98.8
+Television,Entertainment,2005,98.9
+Television,Entertainment,2010,98.5
+Television,Entertainment,2011,98.3
+Vacuum,Household,1922,31.5
+Vacuum,Household,1923,33.5
+Vacuum,Household,1924,35.7
+Vacuum,Household,1925,36
+Vacuum,Household,1926,37.1
+Vacuum,Household,1927,38.8
+Vacuum,Household,1928,40.5
+Vacuum,Household,1929,43.6
+Vacuum,Household,1930,44.5
+Vacuum,Household,1931,45.4
+Vacuum,Household,1932,46.6
+Vacuum,Household,1933,48.6
+Vacuum,Household,1934,48.1
+Vacuum,Household,1935,48.3
+Vacuum,Household,1936,48.9
+Vacuum,Household,1937,48.8
+Vacuum,Household,1938,49
+Vacuum,Household,1939,48.4
+Vacuum,Household,1940,49.2
+Vacuum,Household,1941,49.7
+Vacuum,Household,1942,49.5
+Vacuum,Household,1943,49
+Vacuum,Household,1944,48.2
+Vacuum,Household,1945,46.9
+Vacuum,Household,1946,48.8
+Vacuum,Household,1947,49.5
+Vacuum,Household,1948,51.7
+Vacuum,Household,1949,52.8
+Vacuum,Household,1950,56.5
+Vacuum,Household,1951,57.7
+Vacuum,Household,1952,59.4
+Vacuum,Household,1953,60.5
+Vacuum,Household,1954,62.2
+Vacuum,Household,1955,64.3
+Vacuum,Household,1956,66.7
+Vacuum,Household,1957,68.3
+Vacuum,Household,1958,70.9
+Vacuum,Household,1959,72.5
+Vacuum,Household,1960,74.3
+Vacuum,Household,1961,76.4
+Vacuum,Household,1962,78.2
+Vacuum,Household,1963,79.5
+Vacuum,Household,1964,81.2
+Vacuum,Household,1965,83.5
+Vacuum,Household,1966,85.6
+Vacuum,Household,1967,87
+Vacuum,Household,1968,89.1
+Vacuum,Household,1969,90.7
+Vacuum,Household,1970,92
+Vacuum,Household,1971,94.4
+Vacuum,Household,1972,96.9
+Vacuum,Household,1973,97.5
+Vacuum,Household,1974,98.4
+Vacuum,Household,1975,99.2
+Vacuum,Household,1976,99.5
+Vacuum,Household,1978,99.9
+Videocassette recorder,Entertainment,1992,73.8
+Videocassette recorder,Entertainment,1998,85.2
+Videocassette recorder,Entertainment,2003,90
+Videocassette recorder,Entertainment,2005,92.2
+Videocassette recorder,Entertainment,2010,92.1
+Videocassette recorder,Entertainment,2011,90.9
+Washing machine,Household,1930,10
+Washing machine,Household,1931,12
+Washing machine,Household,1932,13
+Washing machine,Household,1933,15
+Washing machine,Household,1934,17
+Washing machine,Household,1935,19
+Washing machine,Household,1936,20
+Washing machine,Household,1937,22
+Washing machine,Household,1938,24
+Washing machine,Household,1939,25
+Washing machine,Household,1940,24
+Washing machine,Household,1941,22
+Washing machine,Household,1942,20
+Washing machine,Household,1943,19
+Washing machine,Household,1944,18
+Washing machine,Household,1945,17
+Washing machine,Household,1946,15
+Washing machine,Household,1947,16
+Washing machine,Household,1948,16
+Washing machine,Household,1949,17
+Washing machine,Household,1950,18
+Washing machine,Household,1951,19
+Washing machine,Household,1952,20
+Washing machine,Household,1953,22
+Washing machine,Household,1954,26
+Washing machine,Household,1955,29
+Washing machine,Household,1956,32
+Washing machine,Household,1957,35
+Washing machine,Household,1958,37
+Washing machine,Household,1959,38
+Washing machine,Household,1960,41
+Washing machine,Household,1961,43
+Washing machine,Household,1962,45
+Washing machine,Household,1963,47
+Washing machine,Household,1964,49
+Washing machine,Household,1965,50
+Washing machine,Household,1966,52
+Washing machine,Household,1967,53
+Washing machine,Household,1968,55
+Washing machine,Household,1969,58
+Washing machine,Household,1970,59
+Washing machine,Household,1971,61
+Washing machine,Household,1972,64
+Washing machine,Household,1973,66
+Washing machine,Household,1974,68
+Washing machine,Household,1975,70
+Washing machine,Household,1976,71
+Washing machine,Household,1977,72
+Washing machine,Household,1978,73
+Washing machine,Household,1979,73
+Washing machine,Household,1980,72
+Washing machine,Household,1981,71
+Washing machine,Household,1982,69
+Washing machine,Household,1983,69
+Washing machine,Household,1984,71
+Washing machine,Household,1985,71
+Washing machine,Household,1986,72
+Washing machine,Household,1987,73
+Washing machine,Household,1988,74
+Washing machine,Household,1989,76
+Washing machine,Household,1990,76
+Washing machine,Household,1991,77
+Washing machine,Household,1992,77
+Washing machine,Household,1993,77
+Washing machine,Household,1994,77
+Washing machine,Household,1995,77
+Washing machine,Household,1996,77
+Washing machine,Household,1997,77
+Washing machine,Household,1998,78
+Washing machine,Household,1999,78
+Washing machine,Household,2000,78
+Washing machine,Household,2001,79
+Washing machine,Household,2002,80
+Washing machine,Household,2003,81
+Washing machine,Household,2004,81
+Washing machine,Household,2005,81
+Washing machine,Household,2006,81
+Washing machine,Household,2007,80
+Washing machine,Household,2008,79
+Water Heater,Household,1933,1
+Water Heater,Household,1953,12
+Water Heater,Household,1960,20
+Water Heater,Household,1970,23
+Water Heater,Household,1982,29
+Water Heater,Household,1983,31
+Water Heater,Household,1986,35
