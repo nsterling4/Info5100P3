@@ -1,0 +1,38 @@
+Entity,Category,Year,Diffusion
+Automatic transmission,Transportation,1939,0
+Automobile,Transportation,1915,0.1
+Cable TV,Entertainment,1968,0.076
+Cellular phone,Communication,1994,0.1
+Central heating,Household,1920,0.01
+Colour TV,Entertainment,1966,0.1
+Computer,Communication,1992,0.207
+Dishwasher,Household,1922,0.011
+Disk brakes,Transportation,1966,0.01
+Dryer,Household,1950,0.01
+Ebook reader,Entertainment,2009,0.02
+Electric power,Household,1913,0.18
+Electric Range,Household,1933,0.05
+Electronic ignition,Transportation,1962,0
+Flush toilet,Household,1920,0.2
+Freezer,Household,1950,0.06
+Home air conditioning,Household,1957,0.1
+Household refrigerator,Household,1931,0.1
+Internet,Communication,1993,0.1
+Iron,Household,1933,0.96
+Landline,Communication,1913,0.28
+Microwave,Household,1975,0.03
+Podcasting,Entertainment,2006,0.11
+Power steering,Transportation,1951,0
+Radial tires,Transportation,1972,0.005
+Radio,Communication,1925,0.1
+Refrigerator,Household,1925,0.01
+Running water,Household,1940,0.7
+Smartphone usage,Communication,2011,0.35
+Social media usage,Entertainment,2005,0.05
+Stove,Household,1913,0.17
+Tablet,Entertainment,2010,0.03
+Television,Entertainment,1992,0.966
+Vacuum,Household,1922,0.315
+Videocassette recorder,Entertainment,1992,0.738
+Washing machine,Household,1930,0.1
+Water Heater,Household,1933,0.01

@@ -17,7 +17,7 @@ var plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
 const technologyData = async () => {
 
     //Geo variables
-    const techData = await d3.csv("Data/tech.csv", d3.autoType);
+    const techData = await d3.csv("Data/tech_initialValues.csv", d3.autoType);
 
     const wealthData = await d3.csv("Data/income.csv", d3.autoType);
 
@@ -262,7 +262,11 @@ const technologyData = async () => {
                 })
                 .style("fill", d => colorScale(d.Category))
                 .style("opacity", 0)
+                .on("click", function (d){
+                    console.log(d);
+                })
                 .transition().duration(5000).style("opacity", 1).delay(5000)
+
 
         });;
 
