@@ -279,11 +279,6 @@ const technologyData = async () => {
                 })
                 .transition().duration(5000).style("opacity", 1).delay(5000)
 
-            var legend1 = {
-                value: "communication",
-                color: "red",
-                sub: ["a", "b", "c", "d"]
-            }
 
             var uniqueLegend = [];
             let categoryMap = {};
