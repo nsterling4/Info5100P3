@@ -2,7 +2,7 @@
 
 header {
   /* background-color: #F9FAF5; */
-  padding: 15px 0 15px 0;
+  /* padding: 15px 0 15px 0; */
   font-family: monospace;
   /* color:rgb(97, 183, 202); */
 }
@@ -12,6 +12,7 @@ body {
   font-family: monospace;
   /* font-size: 110%; */
   line-height: 20px;
+  margin: 0px;
 }
 
 

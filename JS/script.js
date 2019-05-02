@@ -3,7 +3,7 @@ let svgMain = d3.select("#svgMain");
 let svgMainWidth = svgMain.attr("width");
 let svgMainHeight = svgMain.attr("height");
 var svgMainMargin = {
-    top: 30,
+    top: 70,
     right: 80,
     bottom: 50,
     left: 80
@@ -12,6 +12,13 @@ var plotWidth = svgMainWidth - svgMainMargin.left - svgMainMargin.right;
 var plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
 
 
+    //Title
+    svgMain.append("text")
+        .attr("x", svgMainWidth / 2)
+        .attr("y", 30)
+        .attr("font-size", "28px")
+        .attr("text-anchor", "middle")
+        .text("TITLE");
 
 
 const technologyData = async () => {
@@ -36,7 +43,7 @@ const technologyData = async () => {
     // const yearMax = 2010;
 
     const yearScale = d3.scaleLinear() //X Axis
-        .domain([yearMin, yearMax])
+        .domain([yearMin, yearMax-1])
         .range([0, plotWidth]);
 
 
@@ -60,6 +67,32 @@ const technologyData = async () => {
 
 
     const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+
+
+    //Gridlines 
+
+    let xGridlines = d3.axisBottom(yearScale).tickSize(-plotHeight).tickFormat("");
+    svgMain.append("g")
+        .attr("class", "x gridlines") // X axis
+        .attr("transform", "translate(" + svgMainMargin.left + "," + (svgMainMargin.top + plotHeight) + ")")
+        .call(xGridlines);
+
+
+    let yGridlines = d3.axisLeft(wealthScale).ticks(11).tickSize(-plotWidth).tickFormat("");
+    svgMain.append("g")
+        .attr("class", "y gridlines") // Y axis
+        .attr("id", "y1") // Y axis
+        .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
+        .call(yGridlines);
+
+
+    let y2Gridlines = d3.axisLeft(diffusionScale).ticks(11).tickSize(-plotWidth).tickFormat("");
+    svgMain.append("g")
+        .attr("class", "y gridlines") // Y axis
+        .attr("id", "y2") // Y axis
+        .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
+        .style("opacity", 0)
+        .call(y2Gridlines);
 
 
     //Axis
@@ -127,29 +160,7 @@ const technologyData = async () => {
         .text("Diffusion");
 
 
-    //Gridlines 
 
-    let xGridlines = d3.axisBottom(yearScale).tickSize(-plotHeight).tickFormat("");
-    svgMain.append("g")
-        .attr("class", "x gridlines") // X axis
-        .attr("transform", "translate(" + svgMainMargin.left + "," + (svgMainMargin.top + plotHeight) + ")")
-        .call(xGridlines);
-
-
-    let yGridlines = d3.axisLeft(wealthScale).ticks(11).tickSize(-plotWidth).tickFormat("");
-    svgMain.append("g")
-        .attr("class", "y gridlines") // Y axis
-        .attr("id", "y1") // Y axis
-        .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
-        .call(yGridlines);
-
-    let y2Gridlines = d3.axisLeft(diffusionScale).ticks(11).tickSize(-plotWidth).tickFormat("");
-    svgMain.append("g")
-        .attr("class", "y gridlines") // Y axis
-        .attr("id", "y2") // Y axis
-        .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
-        .style("opacity", 0)
-        .call(y2Gridlines);
 
 
     const plot = svgMain.append("g")
@@ -214,7 +225,7 @@ const technologyData = async () => {
             // .domain(wealthMinMax)
             // .range([plotHeight, 0]);
 
-            svgMain.select("#y1").transition().duration(2000).delay(1000)
+            svgMain.select("#y1.y.axis").transition().duration(2000).delay(1000)
                 .attr("transform", "translate(" + (svgMainMargin.left + plotWidth) + "," + svgMainMargin.top + ")")
                 .style("font-size", "10px");
 
@@ -237,12 +248,12 @@ const technologyData = async () => {
             d3.select("#y1.y.gridlines").transition().delay(50).duration(2000)
                 .style("opacity", 0);
 
-            svgMain.select("#y2").transition().delay(3000).duration(1000)
+            svgMain.select("#y2.y.axis").transition().delay(3000).duration(1000)
                 .style("opacity", 1);
 
 
             svgMain.select("#y2.y.gridlines").transition().delay(3000).duration(1000)
-            .style("opacity", 1);
+                .style("opacity", 1);
 
             svgMain.select("#y2.y.axis.label").transition().delay(4000).duration(1000)
                 .style("opacity", 1);
@@ -250,9 +261,10 @@ const technologyData = async () => {
 
 
             // Add the scatterplot
-            plot.selectAll("dot")
+            plot.selectAll("circle")
                 .data(techData)
                 .enter().append("circle")
+                .attr("Category",d => d.Category)
                 .attr("r", 5)
                 .attr("cx", function (d) {
                     return yearScale(d.Year);
@@ -262,48 +274,74 @@ const technologyData = async () => {
                 })
                 .style("fill", d => colorScale(d.Category))
                 .style("opacity", 0)
-                .on("click", function (d){
+                .on("click", function (d) {
                     console.log(d);
                 })
                 .transition().duration(5000).style("opacity", 1).delay(5000)
 
-                var legend1 = {
-                    value: "communication",
-                    color: "red",
-                    sub: ["a","b","c","d"]
-                }
+            var legend1 = {
+                value: "communication",
+                color: "red",
+                sub: ["a", "b", "c", "d"]
+            }
 
             var uniqueLegend = [];
-                let categoryMap={};
-                for(let i=0;i<techData.length;i++){
-                if(!categoryMap[techData[i].Category]){
-                categoryMap[techData[i].Category]=1;
-                uniqueLegend.push(techData[i]);
+            let categoryMap = {};
+            for (let i = 0; i < techData.length; i++) {
+                if (!categoryMap[techData[i].Category]) {
+                    categoryMap[techData[i].Category] = 1;
+                    uniqueLegend.push(techData[i]);
                 }
-                }
+            }
 
-            var legendData = d3.values(uniqueLegend.map(function(d) {return d.Category;}))
+            var legendData = d3.values(uniqueLegend.map(function (d) {
+                return d.Category;
+            }))
             plot.selectAll("myLegend")
-                .data(techData)
-                .enter()
-                .append('g')
-                .append("text")
-                .attr('x', function(d,i){ return 30 + i*60})
-                .attr('y', 30)
-                .text(function(d) {
-            var index = legendData.indexOf(d.Category);
-            if(index > -1){
-            legendData.splice(index, 1);
-            return d.Category; }})
-                .style("fill", d => colorScale(d.Category))
-                .style("font-size", 15)
-                .on("click", function(d){
-            // is the element currently visible ?
-            currentOpacity = d3.selectAll("." + d.Category).style("opacity", 1);
-            // Change the opacity: from 0 to 1 or from 1 to 0
-            d3.selectAll("." + d.Category).transition().style("opacity", currentOpacity == 1 ? 0:1)
+                .data(techData)
+                .enter()
+                .append('g')
+                .append("text")
+                .attr('x', function (d, i) {
+                    return 30 + i * 300
+                })
+                .attr('y', 10)
+                .text(function (d) {
+                    var index = legendData.indexOf(d.Category);
+                    if (index > -1) {
+                        legendData.splice(index, 1);
+                        return d.Category;
+                    }
+                })
+                .style("fill", d => colorScale(d.Category))
+                .style("font-size", 15)
+                .on("click", function() {
+                    let category = d3.select(this);
+                   // console.log("category");
+                   // console.log(category.text());
+                    plot.selectAll("circle").each(function() {
+                      let circle = d3.select(this);
+                     //console.log("circle");
+                      //console.log(circle);
+                      console.log(circle.attr("Category"));
+                      if (circle.attr("Category") === category.text()) {
+                       d3.select(this).transition().duration(1000).style("opacity", 1);
+                       // console.log("if");
+                      }
+                      else {
+                       // console.log("else");
+                       d3.select(this).transition().duration(1000).style("opacity", 0);
+                      }
+                    })
+                  })
+                // .on("click", function (d) {
+                //     console.log(this);
+                //     // is the element currently visible ?
+                //     currentOpacity = d3.selectAll("." + d.Category).style("opacity", 1);
+                //     // Change the opacity: from 0 to 1 or from 1 to 0
+                //     d3.selectAll("." + d.Category).transition().style("opacity", currentOpacity == 1 ? 0 : 1)
 
-        })
+                // })
 
         });;
 
