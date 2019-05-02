@@ -267,6 +267,43 @@ const technologyData = async () => {
                 })
                 .transition().duration(5000).style("opacity", 1).delay(5000)
 
+                var legend1 = {
+                    value: "communication",
+                    color: "red",
+                    sub: ["a","b","c","d"]
+                }
+
+            var uniqueLegend = [];
+                let categoryMap={};
+                for(let i=0;i<techData.length;i++){
+                if(!categoryMap[techData[i].Category]){
+                categoryMap[techData[i].Category]=1;
+                uniqueLegend.push(techData[i]);
+                }
+                }
+
+            var legendData = d3.values(uniqueLegend.map(function(d) {return d.Category;}))
+            plot.selectAll("myLegend")
+                .data(techData)
+                .enter()
+                .append('g')
+                .append("text")
+                .attr('x', function(d,i){ return 30 + i*60})
+                .attr('y', 30)
+                .text(function(d) {
+            var index = legendData.indexOf(d.Category);
+            if(index > -1){
+            legendData.splice(index, 1);
+            return d.Category; }})
+                .style("fill", d => colorScale(d.Category))
+                .style("font-size", 15)
+                .on("click", function(d){
+            // is the element currently visible ?
+            currentOpacity = d3.selectAll("." + d.Category).style("opacity", 1);
+            // Change the opacity: from 0 to 1 or from 1 to 0
+            d3.selectAll("." + d.Category).transition().style("opacity", currentOpacity == 1 ? 0:1)
+
+        })
 
         });;
 
