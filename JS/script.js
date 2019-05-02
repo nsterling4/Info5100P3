@@ -24,7 +24,8 @@ var plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
 const technologyData = async () => {
 
     //Geo variables
-    const techData = await d3.csv("Data/tech_initialValues.csv", d3.autoType);
+    const techData = await d3.csv("Data/tech.csv", d3.autoType);
+    const techDataInitial = await d3.csv("Data/tech_initialValues.csv", d3.autoType);
 
     const wealthData = await d3.csv("Data/income.csv", d3.autoType);
 
@@ -262,7 +263,7 @@ const technologyData = async () => {
 
             // Add the scatterplot
             plot.selectAll("circle")
-                .data(techData)
+                .data(techDataInitial)
                 .enter().append("circle")
                 .attr("Category",d => d.Category)
                 .attr("r", 5)
@@ -287,10 +288,10 @@ const technologyData = async () => {
 
             var uniqueLegend = [];
             let categoryMap = {};
-            for (let i = 0; i < techData.length; i++) {
-                if (!categoryMap[techData[i].Category]) {
-                    categoryMap[techData[i].Category] = 1;
-                    uniqueLegend.push(techData[i]);
+            for (let i = 0; i < techDataInitial.length; i++) {
+                if (!categoryMap[techDataInitial[i].Category]) {
+                    categoryMap[techDataInitial[i].Category] = 1;
+                    uniqueLegend.push(techDataInitial[i]);
                 }
             }
 
@@ -298,7 +299,7 @@ const technologyData = async () => {
                 return d.Category;
             }))
             plot.selectAll("myLegend")
-                .data(techData)
+                .data(techDataInitial)
                 .enter()
                 .append('g')
                 .append("text")
@@ -317,31 +318,19 @@ const technologyData = async () => {
                 .style("font-size", 15)
                 .on("click", function() {
                     let category = d3.select(this);
-                   // console.log("category");
-                   // console.log(category.text());
                     plot.selectAll("circle").each(function() {
                       let circle = d3.select(this);
-                     //console.log("circle");
-                      //console.log(circle);
                       console.log(circle.attr("Category"));
                       if (circle.attr("Category") === category.text()) {
                        d3.select(this).transition().duration(1000).style("opacity", 1);
-                       // console.log("if");
                       }
                       else {
-                       // console.log("else");
                        d3.select(this).transition().duration(1000).style("opacity", 0);
                       }
                     })
                   })
-                // .on("click", function (d) {
-                //     console.log(this);
-                //     // is the element currently visible ?
-                //     currentOpacity = d3.selectAll("." + d.Category).style("opacity", 1);
-                //     // Change the opacity: from 0 to 1 or from 1 to 0
-                //     d3.selectAll("." + d.Category).transition().style("opacity", currentOpacity == 1 ? 0 : 1)
 
-                // })
+
 
         });;
 
