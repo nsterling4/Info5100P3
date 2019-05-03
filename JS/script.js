@@ -282,6 +282,11 @@ const technologyData = async () => {
 
 
             var uniqueLegend = [];
+            
+
+            legendVals = d3.set(techDataInitial.map( function(d) { return d.Category} ) ).values()
+            console.log(legendVals)
+
             let categoryMap = {};
             for (let i = 0; i < techDataInitial.length; i++) {
                 if (!categoryMap[techDataInitial[i].Category]) {
@@ -294,22 +299,23 @@ const technologyData = async () => {
                 return d.Category;
             }))
             plot.selectAll("myLegend")
-                .data(techDataInitial)
+                .data(legendVals)
                 .enter()
                 .append('g')
                 .append("text")
                 .attr('x', function (d, i) {
-                    return 30 + i * 300
+                    return 10 + i * 200
                 })
                 .attr('y', 10)
                 .text(function (d) {
-                    var index = legendData.indexOf(d.Category);
-                    if (index > -1) {
-                        legendData.splice(index, 1);
-                        return d.Category;
-                    }
+                    return d;
+                    // var index = legendData.indexOf(d.Category);
+                    // if (index > -1) {
+                    //     legendData.splice(index, 1);
+                    //     return d.Category;
+                    // }
                 })
-                .style("fill", d => colorScale(d.Category))
+                .style("fill", d => colorScale(d))
                 .style("font-size", 15)
                 .on("click", function() {
                     let category = d3.select(this);
