@@ -12,13 +12,13 @@ var plotWidth = svgMainWidth - svgMainMargin.left - svgMainMargin.right;
 var plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
 
 
-    //Title
-    svgMain.append("text")
-        .attr("x", svgMainWidth / 2)
-        .attr("y", 30)
-        .attr("font-size", "28px")
-        .attr("text-anchor", "middle")
-        .text("TITLE");
+//Title
+svgMain.append("text")
+    .attr("x", svgMainWidth / 2)
+    .attr("y", 30)
+    .attr("font-size", "28px")
+    .attr("text-anchor", "middle")
+    .text("TITLE");
 
 
 const technologyData = async () => {
@@ -44,7 +44,7 @@ const technologyData = async () => {
     // const yearMax = 2010;
 
     const yearScale = d3.scaleLinear() //X Axis
-        .domain([yearMin, yearMax-1])
+        .domain([yearMin, yearMax - 1])
         .range([0, plotWidth]);
 
 
@@ -200,6 +200,7 @@ const technologyData = async () => {
 
     // Try adding a smoothing function after .x and .y using .curve(func) : .curve(d3.curveMonotoneX), curveStep, curveBasis, curveCardinal
 
+    var currentCategory = "";
 
 
     plot.append("path").attr("class", "line")
@@ -265,7 +266,7 @@ const technologyData = async () => {
             plot.selectAll("circle")
                 .data(techDataInitial)
                 .enter().append("circle")
-                .attr("Category",d => d.Category)
+                .attr("Category", d => d.Category)
                 .attr("r", 5)
                 .attr("cx", function (d) {
                     return yearScale(d.Year);
@@ -311,23 +312,123 @@ const technologyData = async () => {
                 })
                 .style("fill", d => colorScale(d.Category))
                 .style("font-size", 15)
-                .on("click", function() {
+                .on("click", function () {
                     let category = d3.select(this);
-                    plot.selectAll("circle").each(function() {
-                      let circle = d3.select(this);
-                      console.log(circle.attr("Category"));
-                      if (circle.attr("Category") === category.text()) {
-                       d3.select(this).transition().duration(1000).style("opacity", 1);
-                      }
-                      else {
-                       d3.select(this).transition().duration(1000).style("opacity", 0);
-                      }
+                    currentCategory = category.text();
+                    drawLines();
+                    plot.selectAll("circle").each(function () {
+                        let circle = d3.select(this);
+                        if (circle.attr("Category") === category.text()) {
+                            d3.select(this).transition().duration(1000).style("opacity", 1);
+                        } else {
+                            d3.select(this).transition().duration(1000).style("opacity", 0);
+                        }
                     })
-                  })
+                })
 
 
 
         });;
+
+
+    function drawLines() {
+       // console.log("HEEELEELLPPPPP");
+       // console.log(currentCategory);
+        var categoryData = techData.filter(d => d['Category'] === currentCategory);
+       // console.log(categoryData);
+
+        var entities;
+        currentCategory === "Transportation" ? entities = 5 :
+            currentCategory === "Communication" ? entities = 10 :
+            currentCategory === "Household" ? entities = 15 :
+            entities = 20;
+
+      //  console.log(entities);
+
+        var boxes = new Map(); 
+      //  console.log(boxes);
+        categoryData.forEach(d => {
+            let key = d.Entity;
+           // console.log(key);
+            if (boxes.has(key)){
+                let value = boxes.get(key);
+                value.push([d.Year, d.Diffusion]);
+            }
+            else {
+                boxes.set(key, [[d.Year, d.Diffusion]])
+            }
+            //console.log(d);
+        });
+        console.log(boxes);
+
+
+        var points = [
+            [0, 80],
+            [100, 100],
+            [200, 30],
+            [300, 50],
+            [400, 40],
+            [500, 80]
+        ];
+
+
+        var diffusionLine = d3.line()
+        .x((d,i) => yearScale( (d[i])[0] ))
+        .y((d, i) => diffusionScale( (d[i])[1] )) 
+        .curve(d3.curveMonotoneX);
+
+        var lineGenerator = d3.line()
+	.curve(d3.curveCardinal);
+
+        let keys = boxes.keys();
+        let values = boxes.values();
+        console.log("one line");
+        console.log(keys);
+
+        for(var val of values) {
+            console.log("val"); 
+            console.log(val); 
+            console.log(val[0][0]); 
+            console.log(val[0][1]); 
+            console.log(val[4][0]); 
+            console.log(val[4][1]);
+
+
+            var pathData = lineGenerator(points);
+
+            plot.append("path")
+                .attr('d', pathData);
+
+        // plot.append("path")
+        // .datum(val)
+        // .style("opacity", 1)
+        // .style("stroke", "black")
+        // .style("stroke-width", "5px")
+        // .attr("d", diffusionLine);
+
+
+
+        }
+
+
+
+
+
+
+        // var line2 = d3.line()
+        // .x(d => yearScale(d.TIME))
+        // .y(d => wealthScale(d.Value))
+        // .curve(d3.curveMonotoneX);
+
+
+
+
+
+
+
+    }
+
+
 
 
 
