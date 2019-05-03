@@ -18,7 +18,7 @@ svgMain.append("text")
     .attr("y", 30)
     .attr("font-size", "28px")
     .attr("text-anchor", "middle")
-    .text("TITLE");
+    .text("Diffusion of Technologies in US Households");
 
 
 const technologyData = async () => {
@@ -44,7 +44,7 @@ const technologyData = async () => {
     // const yearMax = 2010;
 
     const yearScale = d3.scaleLinear() //X Axis
-        .domain([yearMin, yearMax])
+        .domain([yearMin, yearMax-1])
         .range([0, plotWidth]);
 
 
@@ -200,7 +200,6 @@ const technologyData = async () => {
 
     // Try adding a smoothing function after .x and .y using .curve(func) : .curve(d3.curveMonotoneX), curveStep, curveBasis, curveCardinal
 
-    var currentCategory = "";
 
 
     plot.append("path").attr("class", "line")
@@ -250,14 +249,14 @@ const technologyData = async () => {
             d3.select("#y1.y.gridlines").transition().delay(50).duration(2000)
                 .style("opacity", 0);
 
-            svgMain.select("#y2.y.axis").transition().delay(3000).duration(1000)
+            svgMain.select("#y2.y.axis").transition().delay(4000).duration(2000)
                 .style("opacity", 1);
 
 
             svgMain.select("#y2.y.gridlines").transition().delay(3000).duration(1000)
                 .style("opacity", 1);
 
-            svgMain.select("#y2.y.axis.label").transition().delay(4000).duration(1000)
+            svgMain.select("#y2.y.axis.label").transition().delay(5000).duration(2000)
                 .style("opacity", 1);
 
 
@@ -279,7 +278,7 @@ const technologyData = async () => {
                 .on("click", function (d) {
                     console.log(d);
                 })
-                .transition().duration(5000).style("opacity", 1).delay(5000)
+                .transition().duration(3000).style("opacity", 1).delay(7000)
 
 
             // var uniqueLegend = [];
@@ -309,6 +308,7 @@ const technologyData = async () => {
                     return 80 + i * 200
                 })
                 .attr('y', 60)
+                .style("opacity",0)
                 .text(function (d) {
                     return d;
                     // var index = legendData.indexOf(d.Category);
@@ -317,12 +317,12 @@ const technologyData = async () => {
                     //     return d.Category;
                     // }
                 })
+
                 .style("fill", d => colorScale(d))
                 .style("font-size", 15)
                 .on("click", function () {
                     let category = d3.select(this);
-                    currentCategory = category.text();
-                    drawLines();
+                    drawLines(category.text(), category.style("fill"));
                     plot.selectAll("circle").each(function () {
                         let circle = d3.select(this);
                         if (circle.attr("Category") === category.text()) {
@@ -332,25 +332,22 @@ const technologyData = async () => {
                         }
                     })
                 })
+                .transition().duration(3000).delay(6000).style("opacity", 1)
 
 
 
         });;
 
 
-    function drawLines() {
+    function drawLines(currentCategory, color) {
        // console.log("HEEELEELLPPPPP");
        // console.log(currentCategory);
         var categoryData = techData.filter(d => d['Category'] === currentCategory);
        // console.log(categoryData);
 
-        var entities;
-        currentCategory === "Transportation" ? entities = 5 :
-            currentCategory === "Communication" ? entities = 10 :
-            currentCategory === "Household" ? entities = 15 :
-            entities = 20;
-
-      //  console.log(entities);
+      
+    plot.selectAll(".diffusionLine").transition().duration(1000).style("opacity",0);
+     plot.selectAll(".diffusionLine").transition().delay(1000).remove();
 
         var boxes = new Map(); 
       //  console.log(boxes);
@@ -373,25 +370,24 @@ const technologyData = async () => {
         var diffusionLine = d3.line()
         .x((d,i) => yearScale( d[0] ))
         .y((d, i) => diffusionScale( d[1])) 
-        .curve(d3.curveMonotoneX);
 
-        var lineGenerator = d3.line()
-	.curve(d3.curveCardinal);
 
         let keys = boxes.keys();
         let values = boxes.values();
-        console.log("one line");
-        console.log(keys);
+
 
         for(var val of values) {
 
         plot.append("path")
         .datum(val)
         .style("opacity", 1)
-        .style("stroke", "black")
-        .style("stroke-width", "1px")
+        .style("stroke",  color)
+        .style("stroke-width", "2px")
         .style("fill","none")
-        .attr("d", diffusionLine);
+        .attr("class","diffusionLine")
+        .attr("d", diffusionLine)
+        .style("opacity", 0)
+        .transition().duration(1000).style("opacity", 1).delay(1000);
 
 
 
