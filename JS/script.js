@@ -44,7 +44,7 @@ const technologyData = async () => {
     // const yearMax = 2010;
 
     const yearScale = d3.scaleLinear() //X Axis
-        .domain([yearMin, yearMax - 1])
+        .domain([yearMin, yearMax])
         .range([0, plotWidth]);
 
 
@@ -368,19 +368,10 @@ const technologyData = async () => {
         console.log(boxes);
 
 
-        var points = [
-            [0, 80],
-            [100, 100],
-            [200, 30],
-            [300, 50],
-            [400, 40],
-            [500, 80]
-        ];
-
 
         var diffusionLine = d3.line()
-        .x((d,i) => yearScale( (d[i])[0] ))
-        .y((d, i) => diffusionScale( (d[i])[1] )) 
+        .x((d,i) => yearScale( d[0] ))
+        .y((d, i) => diffusionScale( d[1])) 
         .curve(d3.curveMonotoneX);
 
         var lineGenerator = d3.line()
@@ -392,43 +383,18 @@ const technologyData = async () => {
         console.log(keys);
 
         for(var val of values) {
-            console.log("val"); 
-            console.log(val); 
-            console.log(val[0][0]); 
-            console.log(val[0][1]); 
-            console.log(val[4][0]); 
-            console.log(val[4][1]);
 
-
-            var pathData = lineGenerator(points);
-
-            plot.append("path")
-                .attr('d', pathData);
-
-        // plot.append("path")
-        // .datum(val)
-        // .style("opacity", 1)
-        // .style("stroke", "black")
-        // .style("stroke-width", "5px")
-        // .attr("d", diffusionLine);
+        plot.append("path")
+        .datum(val)
+        .style("opacity", 1)
+        .style("stroke", "black")
+        .style("stroke-width", "1px")
+        .style("fill","none")
+        .attr("d", diffusionLine);
 
 
 
         }
-
-
-
-
-
-
-        // var line2 = d3.line()
-        // .x(d => yearScale(d.TIME))
-        // .y(d => wealthScale(d.Value))
-        // .curve(d3.curveMonotoneX);
-
-
-
-
 
 
 
