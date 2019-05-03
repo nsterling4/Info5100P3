@@ -282,32 +282,33 @@ const technologyData = async () => {
                 .transition().duration(5000).style("opacity", 1).delay(5000)
 
 
-            var uniqueLegend = [];
+            // var uniqueLegend = [];
             
 
             legendVals = d3.set(techDataInitial.map( function(d) { return d.Category} ) ).values()
             console.log(legendVals)
 
-            let categoryMap = {};
-            for (let i = 0; i < techDataInitial.length; i++) {
-                if (!categoryMap[techDataInitial[i].Category]) {
-                    categoryMap[techDataInitial[i].Category] = 1;
-                    uniqueLegend.push(techDataInitial[i]);
-                }
-            }
+            // let categoryMap = {};
+            // for (let i = 0; i < techDataInitial.length; i++) {
+            //     if (!categoryMap[techDataInitial[i].Category]) {
+            //         categoryMap[techDataInitial[i].Category] = 1;
+            //         uniqueLegend.push(techDataInitial[i]);
+            //     }
+            // }
 
-            var legendData = d3.values(uniqueLegend.map(function (d) {
-                return d.Category;
-            }))
-            plot.selectAll("myLegend")
+            // var legendData = d3.values(uniqueLegend.map(function (d) {
+            //     return d.Category;
+            // }))
+
+            svgMain.selectAll("myLegend")
                 .data(legendVals)
                 .enter()
                 .append('g')
                 .append("text")
                 .attr('x', function (d, i) {
-                    return 10 + i * 200
+                    return 80 + i * 200
                 })
-                .attr('y', 10)
+                .attr('y', 60)
                 .text(function (d) {
                     return d;
                     // var index = legendData.indexOf(d.Category);
