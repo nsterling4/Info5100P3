@@ -44,7 +44,7 @@ const technologyData = async () => {
     // const yearMax = 2010;
 
     const yearScale = d3.scaleLinear() //X Axis
-        .domain([yearMin, yearMax-1])
+        .domain([yearMin, yearMax - 1])
         .range([0, plotWidth]);
 
 
@@ -282,9 +282,11 @@ const technologyData = async () => {
 
 
             // var uniqueLegend = [];
-            
 
-            legendVals = d3.set(techDataInitial.map( function(d) { return d.Category} ) ).values()
+
+            legendVals = d3.set(techDataInitial.map(function (d) {
+                return d.Category
+            })).values()
             console.log(legendVals)
 
             // let categoryMap = {};
@@ -308,7 +310,7 @@ const technologyData = async () => {
                     return 80 + i * 200
                 })
                 .attr('y', 60)
-                .style("opacity",0)
+                .style("opacity", 0)
                 .text(function (d) {
                     return d;
                     // var index = legendData.indexOf(d.Category);
@@ -340,26 +342,27 @@ const technologyData = async () => {
 
 
     function drawLines(currentCategory, color) {
-       // console.log("HEEELEELLPPPPP");
-       // console.log(currentCategory);
+        // console.log("HEEELEELLPPPPP");
+        // console.log(currentCategory);
         var categoryData = techData.filter(d => d['Category'] === currentCategory);
-       // console.log(categoryData);
+        // console.log(categoryData);
 
-      
-    plot.selectAll(".diffusionLine").transition().duration(1000).style("opacity",0);
-     plot.selectAll(".diffusionLine").transition().delay(1000).remove();
 
-        var boxes = new Map(); 
-      //  console.log(boxes);
+        plot.selectAll(".diffusionLine").transition().duration(1000).style("opacity", 0);
+        plot.selectAll(".diffusionLine").transition().delay(1000).remove();
+
+        var boxes = new Map();
+        //  console.log(boxes);
         categoryData.forEach(d => {
             let key = d.Entity;
-           // console.log(key);
-            if (boxes.has(key)){
+            // console.log(key);
+            if (boxes.has(key)) {
                 let value = boxes.get(key);
                 value.push([d.Year, d.Diffusion]);
-            }
-            else {
-                boxes.set(key, [[d.Year, d.Diffusion]])
+            } else {
+                boxes.set(key, [
+                    [d.Year, d.Diffusion]
+                ])
             }
             //console.log(d);
         });
@@ -368,26 +371,38 @@ const technologyData = async () => {
 
 
         var diffusionLine = d3.line()
-        .x((d,i) => yearScale( d[0] ))
-        .y((d, i) => diffusionScale( d[1])) 
+            .x((d, i) => yearScale(d[0]))
+            .y((d, i) => diffusionScale(d[1]))
 
 
         let keys = boxes.keys();
         let values = boxes.values();
 
 
-        for(var val of values) {
+        for (var val of values) {
 
-        plot.append("path")
-        .datum(val)
-        .style("opacity", 1)
-        .style("stroke",  color)
-        .style("stroke-width", "2px")
-        .style("fill","none")
-        .attr("class","diffusionLine")
-        .attr("d", diffusionLine)
-        .style("opacity", 0)
-        .transition().duration(1000).style("opacity", 1).delay(1000);
+            var path = plot.append("path");
+            path.datum(val)
+                .style("opacity", 1)
+                .style("stroke", color)
+                .style("stroke-width", "2px")
+                .style("fill", "none")
+                .attr("class", "diffusionLine")
+                .attr("d", diffusionLine)
+                //.style("opacity", 0)
+               // .transition().duration(1000).style("opacity", 1).delay(1000);
+
+            // Variable to Hold Total Length
+            var totalLength = path.node().getTotalLength();
+
+            // Set Properties of Dash Array and Dash Offset and initiate Transition
+            path.attr("stroke-dasharray", totalLength + " " + totalLength)
+                .attr("stroke-dashoffset", totalLength)
+                .transition() // Call Transition Method
+                .delay(1000)
+                .duration(4000) // Set Duration timing (ms)
+                .ease(d3.easeLinear) // Set Easing option
+                .attr("stroke-dashoffset", 0); // Set final value of dash-offset for transition
 
 
 
