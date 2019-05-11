@@ -8,6 +8,7 @@ var svgMainMargin = {
     bottom: 50,
     left: 80
 };
+var tooltip = { width: 100, height: 100, x: 10, y: -30 };
 var plotWidth = svgMainWidth - svgMainMargin.left - svgMainMargin.right;
 var plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
 
@@ -404,20 +405,55 @@ const technologyData = async () => {
                 .ease(d3.easeLinear) // Set Easing option
                 .attr("stroke-dashoffset", 0); // Set final value of dash-offset for transition
 
-
-
         }
-
-
 
     }
 
+//add tooltips
+var focus = plot.append("g")
+    .attr("class", "focus")
+    .style("display", "none");
 
+focus.append("circle")
+    .attr("r", 5);
 
+focus.append("rect")
+    .attr("class", "tooltip")
+    .attr("width", 100)
+    .attr("height", 50)
+    .attr("x", 10)
+    .attr("y", -22)
+    .attr("rx", 4)
+    .attr("ry", 4);
 
+focus.append("text")
+    .attr("class", "tooltip-entity")
+    .attr("x", 18)
+    .attr("y", -2);
 
+focus.append("text")
+    .attr("x", 18)
+    .attr("y", 18)
+    .text("Diffusion:");
 
+focus.append("text")
+    .attr("class", "tooltip-diffusion")
+    .attr("x", 60)
+    .attr("y", 18);
 
+plot.append("rect")
+    .attr("class", "overlay")
+    .attr("width", 100)
+    .attr("height", 100)
+    .on("mouseover", function() { focus.style("display", null); })
+    .on("mouseout", function() { focus.style("display", "none"); })
+    .on("mousemove", mousemove);
+
+    function mousemove() {
+        focus.attr("transform", "translate(" + yearScale(techData.Year) + "," + diffusionScale(techData.Diffusion) + ")");
+        focus.select(".tooltip-entity").text(techData.Entity);
+        focus.select(".tooltip-diffusion").text(techData.Diffusion);
+    }
 }
 
 
