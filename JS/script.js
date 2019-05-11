@@ -68,7 +68,8 @@ const technologyData = async () => {
 
 
 
-    const colorScale = d3.scaleOrdinal(d3.schemeCategory10);
+    const colorScale =  const colorScale = d3.scaleOrdinal([d3.rgb("#F6AB2B"), d3.rgb("#2C3540"), d3.rgb("#3C86AA"), d3.rgb("#D97762")]);
+    //d3.scaleOrdinal(d3.schemeCategory10);
 
 
     //Gridlines 
