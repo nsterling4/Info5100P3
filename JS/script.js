@@ -323,6 +323,7 @@ const technologyData = async () => {
 
                 .style("fill", d => colorScale(d))
                 .style("font-size", 15)
+                .style("cursor", "hand")
                 .on("click", function () {
                     let category = d3.select(this);
                     drawLines(category.text(), category.style("fill"));
