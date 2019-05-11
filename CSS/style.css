@@ -47,3 +47,26 @@ footer {
 footer a{
   color: #FFFFFF;
 }
+
+/* mouseover effect */
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: steelblue;
+}
+
+.focus text {
+  font-size: 14px;
+}
+
+.tooltip {
+  fill: white;
+  stroke: #000;
+}
+
+.tooltip-entity, .tooltip-diffusion {
+  font-weight: bold;
+}
