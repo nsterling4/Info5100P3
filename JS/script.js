@@ -278,7 +278,7 @@ const technologyData = async () => {
                 .on("click", function (d) {
                     console.log(d);
                 })
-                .transition().duration(3000).style("opacity", 1).delay(7000)
+                .transition().duration(2000).style("opacity", 1).delay(6000)
 
 
             // var uniqueLegend = [];
@@ -334,7 +334,7 @@ const technologyData = async () => {
                         }
                     })
                 })
-                .transition().duration(3000).delay(6000).style("opacity", 1)
+                .transition().duration(2000).delay(5000).style("opacity", 1)
 
 
 
@@ -401,7 +401,7 @@ const technologyData = async () => {
                 .transition() // Call Transition Method
                 .delay(1000)
                 .duration(4000) // Set Duration timing (ms)
-                .ease(d3.easeLinear) // Set Easing option
+                .ease(d3.easeCubicInOut) // Set Easing option
                 .attr("stroke-dashoffset", 0); // Set final value of dash-offset for transition
 
 
