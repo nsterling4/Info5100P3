@@ -356,29 +356,29 @@ const technologyData = async () => {
                 .style("font-size", 22)
                 .style("text-decoration", "underline")
                 .style("cursor", "hand")
-                .on("mouseenter", function () {
-                    let category = d3.select(this);
-                    //drawLines(category.text(), category.style("fill"));
-                    plot.selectAll("circle").each(function () {
-                        let circle = d3.select(this);
-                        if (circle.attr("Category") === category.text()) {
-                            d3.select(this).transition().duration(1000).style("opacity", 1);
-                        }
-                    })
-                    hover = category.text();
-                })
-                .on("mouseexit", function () {
-                    let category = d3.select(this);
-                    console.log(category);
-                    //drawLines(category.text(), category.style("fill"));
-                    plot.selectAll("circle").each(function () {
-                        let circle = d3.select(this);
-                        if (circle.attr("Category") === category.text()) {
-                            d3.select(this).transition().duration(1000).style("opacity", 0);
-                        }
-                    })
-                    hover = category.text();
-                })
+                // .on("mouseenter", function () {
+                //     let category = d3.select(this);
+                //     //drawLines(category.text(), category.style("fill"));
+                //     plot.selectAll("circle").each(function () {
+                //         let circle = d3.select(this);
+                //         if (circle.attr("Category") === category.text()) {
+                //             d3.select(this).transition().duration(1000).style("opacity", 1);
+                //         }
+                //     })
+                //     hover = category.text();
+                // })
+                // .on("mouseexit", function () {
+                //     let category = d3.select(this);
+                //     console.log(category);
+                //     //drawLines(category.text(), category.style("fill"));
+                //     plot.selectAll("circle").each(function () {
+                //         let circle = d3.select(this);
+                //         if (circle.attr("Category") === category.text()) {
+                //             d3.select(this).transition().duration(1000).style("opacity", 0);
+                //         }
+                //     })
+                //     hover = category.text();
+                // })
                 .on("click", function () {
                     let category = d3.select(this);
                     drawLines(category.text(), category.style("fill"));
@@ -547,11 +547,11 @@ const technologyData = async () => {
         focus.append("text")
             .attr("x", 18)
             .attr("y", 18)
-            .text("Diffusion:");
+            .text("Household Diffusion:");
 
         focus.append("text")
             .attr("class", "tooltip-diffusion")
-            .attr("x", 80)
+            .attr("x", 151)
             .attr("y", 18);
 
     }
