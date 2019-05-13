@@ -68,7 +68,7 @@ const technologyData = async () => {
 
 
 
-    const colorScale =  const colorScale = d3.scaleOrdinal([d3.rgb("#F6AB2B"), d3.rgb("#2C3540"), d3.rgb("#3C86AA"), d3.rgb("#D97762")]);
+    const colorScale = d3.scaleOrdinal([d3.rgb("#F6AB2B"), d3.rgb("#2C3540"), d3.rgb("#3C86AA"), d3.rgb("#D97762")]);
     //d3.scaleOrdinal(d3.schemeCategory10);
 
 
@@ -344,11 +344,14 @@ const technologyData = async () => {
         });;
 
 
+
+
+
     function drawLines(currentCategory, color) {
         // console.log("HEEELEELLPPPPP");
         // console.log(currentCategory);
         var categoryData = techData.filter(d => d['Category'] === currentCategory);
-        // console.log(categoryData);
+         console.log(categoryData);
 
 
         plot.selectAll(".diffusionLine").transition().duration(1000).style("opacity", 0);
@@ -378,22 +381,73 @@ const technologyData = async () => {
             .y((d, i) => diffusionScale(d[1]))
 
 
-        let keys = boxes.keys();
-        let values = boxes.values();
+        //let keys = boxes.keys();
+       let values = boxes.values();
+        let entries = boxes.entries();
+        console.log(entries);
+        for (var entry of entries) {
 
+          // let values = entry[1];
+           //console.log(entry[0]);
+          // console.log(values);
+           console.log(entry);
+          // console.log(entry[0].values);
+        // for (var val of values) {
 
-        for (var val of values) {
+            let entity = entry[0];
+            console.log(entry[1]);
+            let val = entry[1];
 
-            var path = plot.append("path");
+            let path = plot.append("path");
             path.datum(val)
                 .style("opacity", 1)
                 .style("stroke", color)
                 .style("stroke-width", "2px")
                 .style("fill", "none")
                 .attr("class", "diffusionLine")
+              //  .attr("id", val)
                 .attr("d", diffusionLine)
                 //.style("opacity", 0)
                // .transition().duration(1000).style("opacity", 1).delay(1000);
+
+
+
+               let pathOutline = plot.append("path");
+               pathOutline.datum(val)
+                   .style("opacity", 0)
+                   .style("stroke-width", "20px")
+                   .style("stroke", color)
+                   .style("fill", "none")
+                   .attr("class", "diffusionLine")
+                   .attr("id", val)
+                   .attr("d", diffusionLine)
+                   .on("mouseenter", function() { 
+                       console.log("in");
+                       path.style("stroke-width", "5px"); 
+                       console.log(entity);
+                       focus.style("opacity", "1");
+                    focus.select(".tooltip-entity").text(entity);
+                    focus.select(".tooltip-diffusion").text( ( (diffusionScale.invert(event.pageY-205) *100).toFixed(0) +"%")  );
+
+                    focus.attr("transform", "translate(" + ((event.pageX)-150) + "," + ((event.pageY)-250) + ")");
+                    //focus.style("left",event.pageX);
+                  // d3.select(".tooltip").style("left", event.pageX - (focusRect.attr("width") / 2) + "px")
+                 //   .style("top", event.pageY - (focusRect.attr("height") + 20) + "px")
+
+                       for (var datum of val) {
+                        //   console.log(datum);
+                           
+                       }
+                   })
+                   .on("mouseout", function() { 
+                       console.log("out");
+                       path.style("stroke-width", "2px"); 
+                      focus.style("opacity", "0");
+                   })
+                   .on("mousemove", function() { 
+                    focus.attr("transform", "translate(" + ((event.pageX)-150) + "," + ((event.pageY)-250) + ")");
+                    focus.select(".tooltip-diffusion").text( ( (diffusionScale.invert(event.pageY-205) *100).toFixed(0) +"%")  );
+                })
 
             // Variable to Hold Total Length
             var totalLength = path.node().getTotalLength();
@@ -403,59 +457,65 @@ const technologyData = async () => {
                 .attr("stroke-dashoffset", totalLength)
                 .transition() // Call Transition Method
                 .delay(1000)
-                .duration(4000) // Set Duration timing (ms)
-                .ease(d3.easeCubicInOut) // Set Easing option
+                .duration(4000) // Set Duration timing 
+                .ease(d3.easeQuadInOut) // Set Easing option
                 .attr("stroke-dashoffset", 0); // Set final value of dash-offset for transition
 
-        }
-
+      //  }
     }
 
-//add tooltips
+    //add tooltips
 var focus = plot.append("g")
-    .attr("class", "focus")
-    .style("display", "none");
+.attr("class", "focus")
+.style("opacity", "0");
 
-focus.append("circle")
-    .attr("r", 5);
+// focus.append("circle")
+//     .attr("r", 5);
 
 focus.append("rect")
-    .attr("class", "tooltip")
-    .attr("width", 100)
-    .attr("height", 50)
-    .attr("x", 10)
-    .attr("y", -22)
-    .attr("rx", 4)
-    .attr("ry", 4);
+.attr("class", "tooltip")
+.attr("width", 100)
+.attr("height", 50)
+.attr("x", 10)
+.attr("y", -22)
+.attr("rx", 4)
+.attr("ry", 4);
 
 focus.append("text")
-    .attr("class", "tooltip-entity")
-    .attr("x", 18)
-    .attr("y", -2);
+.attr("class", "tooltip-entity")
+.attr("x", 18)
+.attr("y", -2);
 
 focus.append("text")
-    .attr("x", 18)
-    .attr("y", 18)
-    .text("Diffusion:");
+.attr("x", 18)
+.attr("y", 18)
+.text("Diffusion:");
 
 focus.append("text")
-    .attr("class", "tooltip-diffusion")
-    .attr("x", 60)
-    .attr("y", 18);
+.attr("class", "tooltip-diffusion")
+.attr("x", 80)
+.attr("y", 18);
 
-plot.append("rect")
-    .attr("class", "overlay")
-    .attr("width", 100)
-    .attr("height", 100)
-    .on("mouseover", function() { focus.style("display", null); })
-    .on("mouseout", function() { focus.style("display", "none"); })
-    .on("mousemove", mousemove);
-
-    function mousemove() {
-        focus.attr("transform", "translate(" + yearScale(techData.Year) + "," + diffusionScale(techData.Diffusion) + ")");
-        focus.select(".tooltip-entity").text(techData.Entity);
-        focus.select(".tooltip-diffusion").text(techData.Diffusion);
     }
+
+
+
+// plot.append("rect")
+//     .attr("class", "overlay")
+//     .attr("width", 100)
+//     .attr("height", 100)
+//     .on("mouseover", function() { focus.style("display", null); })
+//     .on("mouseout", function() { focus.style("display", "none"); })
+//     .on("mousemove", mousemove);
+
+//     function mousemove() {
+//         focus.attr("transform", "translate(" + yearScale(techData.Year) + "," + diffusionScale(techData.Diffusion) + ")");
+//         focus.select(".tooltip-entity").text(techData.Entity);
+//         focus.select(".tooltip-diffusion").text(techData.Diffusion);
+//     }
+
+
+    
 }
 
 
