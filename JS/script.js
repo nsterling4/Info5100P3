@@ -8,18 +8,23 @@ var svgMainMargin = {
     bottom: 50,
     left: 80
 };
-var tooltip = { width: 100, height: 100, x: 10, y: -30 };
+var tooltip = {
+    width: 100,
+    height: 100,
+    x: 10,
+    y: -30
+};
 var plotWidth = svgMainWidth - svgMainMargin.left - svgMainMargin.right;
 var plotHeight = svgMainHeight - svgMainMargin.top - svgMainMargin.bottom;
 
 
-//Title
-svgMain.append("text")
-    .attr("x", svgMainWidth / 2)
-    .attr("y", 30)
-    .attr("font-size", "28px")
-    .attr("text-anchor", "middle")
-    .text("Diffusion of Technologies in US Households");
+// //Title
+// svgMain.append("text")
+//     .attr("x", svgMainWidth / 2)
+//     .attr("y", 30)
+//     .attr("font-size", "28px")
+//     .attr("text-anchor", "middle")
+//     .text("Diffusion of Technologies in US Households");
 
 
 const technologyData = async () => {
@@ -68,7 +73,7 @@ const technologyData = async () => {
 
 
 
-    const colorScale = d3.scaleOrdinal([d3.rgb("#F6AB2B"), d3.rgb("#2C3540"), d3.rgb("#3C86AA"), d3.rgb("#D97762")]);
+    const colorScale = d3.scaleOrdinal([d3.rgb("#693FFF"), d3.rgb("#EC782E"), d3.rgb("#07B4E8"), d3.rgb("#E8272E")]);
     //d3.scaleOrdinal(d3.schemeCategory10);
 
 
@@ -112,10 +117,13 @@ const technologyData = async () => {
     svgMain.append("g")
         .attr("class", "y axis")
         .attr("id", "y1")
-        .attr("transform", "translate(" + (svgMainMargin.left) + "," + svgMainMargin.top + ")")
+        .attr("transform", "translate(" + (svgMainMargin.left + plotWidth) + "," + svgMainMargin.top + ")")
         .style("stroke-width", "2px")
+        .style("font-size", "15px")
         .call(yAxis);
 
+        svgMain.selectAll("#y1.y.axis text").attr("transform", "translate(" + 70 + "," + 0 + ")");
+        svgMain.selectAll("#y1.y.axis line").attr("transform", "translate(" + 6 + "," + 0 + ")");
 
     //right Y Axis
     let y2Axis = d3.axisLeft(diffusionScale).tickFormat(d3.format(".0%"));
@@ -143,12 +151,14 @@ const technologyData = async () => {
     svgMain.append("text")
         .attr("class", "y axis label")
         .attr("id", "y1")
-        .attr("x", -svgMainHeight / 2)
-        .attr("y", 20)
-        .attr("font-size", "18px")
+        .attr("x", svgMainWidth / 2)
+        .attr("y", 40)
+        .attr("font-size", "25px")
         .attr("text-anchor", "middle")
-        .attr("transform", "rotate(-90)")
-        .text("Median Income");
+       // .attr("transform", "rotate(-90)")
+        .text("Median Income")
+        .style("opacity",0)
+        .transition().duration(2000).style("opacity",1);
 
     // y2 label
     svgMain.append("text")
@@ -229,23 +239,22 @@ const technologyData = async () => {
             // .range([plotHeight, 0]);
 
             svgMain.select("#y1.y.axis").transition().duration(2000).delay(1000)
-                .attr("transform", "translate(" + (svgMainMargin.left + plotWidth) + "," + svgMainMargin.top + ")")
                 .style("font-size", "10px");
 
-            svgMain.selectAll("#y1.y.axis text").transition().delay(2000).duration(500)
+            svgMain.selectAll("#y1.y.axis text").transition().delay(2000).duration(1000)
                 .attr("transform", "translate(" + 50 + "," + 0 + ")");
 
-            svgMain.selectAll("#y1.y.axis line").transition().delay(2000).duration(500)
+            svgMain.selectAll("#y1.y.axis line").transition().delay(2000).duration(1000)
                 .style("opacity", 0);
 
             svgMain.select("#y1.y.axis.label").transition().delay(700).duration(1000)
-                .style("opacity", 0)
-                .transition().duration(500)
+                //.style("opacity", 0)
+                .transition().duration(2000)
                 .attr("transform", "rotate(90)")
                 .attr("x", svgMainHeight / 2)
                 .attr("y", -svgMainWidth + 20)
                 .style("font-size", "12px")
-                .transition().delay(200).style("opacity", 1).duration(1000);
+               // .transition().delay(200).style("opacity", 1).duration(1000);
 
 
             d3.select("#y1.y.gridlines").transition().delay(50).duration(2000)
@@ -268,7 +277,7 @@ const technologyData = async () => {
                 .data(techDataInitial)
                 .enter().append("circle")
                 .attr("Category", d => d.Category)
-                .attr("r", 5)
+                .attr("r", 6)
                 .attr("cx", function (d) {
                     return yearScale(d.Year);
                 })
@@ -277,8 +286,27 @@ const technologyData = async () => {
                 })
                 .style("fill", d => colorScale(d.Category))
                 .style("opacity", 0)
+                .style("cursor", "pointer")
                 .on("click", function (d) {
                     console.log(d);
+
+
+                    console.log(d3.select(this))
+
+                    // let category = d;
+                    drawLines(d.Category, d3.select(this).style("fill"));
+                    plot.selectAll("circle").each(function () {
+                        let circle = d3.select(this);
+                        if (circle.attr("Category") === d.Category) {
+                            d3.select(this).transition().duration(1000).style("opacity", 1);
+                        } else {
+                            d3.select(this).transition().duration(1000).style("opacity", 0);
+                        }
+                    })
+
+
+
+
                 })
                 .transition().duration(2000).style("opacity", 1).delay(6000)
 
@@ -303,15 +331,17 @@ const technologyData = async () => {
             //     return d.Category;
             // }))
 
-            svgMain.selectAll("myLegend")
+
+
+            plot.selectAll("myLegend")
                 .data(legendVals)
                 .enter()
                 .append('g')
                 .append("text")
                 .attr('x', function (d, i) {
-                    return 80 + i * 200
+                    return 260 + i * 200
                 })
-                .attr('y', 60)
+                .attr('y', -30)
                 .style("opacity", 0)
                 .text(function (d) {
                     return d;
@@ -323,8 +353,32 @@ const technologyData = async () => {
                 })
 
                 .style("fill", d => colorScale(d))
-                .style("font-size", 15)
+                .style("font-size", 22)
+                .style("text-decoration", "underline")
                 .style("cursor", "hand")
+                .on("mouseenter", function () {
+                    let category = d3.select(this);
+                    //drawLines(category.text(), category.style("fill"));
+                    plot.selectAll("circle").each(function () {
+                        let circle = d3.select(this);
+                        if (circle.attr("Category") === category.text()) {
+                            d3.select(this).transition().duration(1000).style("opacity", 1);
+                        }
+                    })
+                    hover = category.text();
+                })
+                .on("mouseexit", function () {
+                    let category = d3.select(this);
+                    console.log(category);
+                    //drawLines(category.text(), category.style("fill"));
+                    plot.selectAll("circle").each(function () {
+                        let circle = d3.select(this);
+                        if (circle.attr("Category") === category.text()) {
+                            d3.select(this).transition().duration(1000).style("opacity", 0);
+                        }
+                    })
+                    hover = category.text();
+                })
                 .on("click", function () {
                     let category = d3.select(this);
                     drawLines(category.text(), category.style("fill"));
@@ -341,6 +395,7 @@ const technologyData = async () => {
 
 
 
+
         });;
 
 
@@ -351,7 +406,7 @@ const technologyData = async () => {
         // console.log("HEEELEELLPPPPP");
         // console.log(currentCategory);
         var categoryData = techData.filter(d => d['Category'] === currentCategory);
-         console.log(categoryData);
+        console.log(categoryData);
 
 
         plot.selectAll(".diffusionLine").transition().duration(1000).style("opacity", 0);
@@ -382,20 +437,20 @@ const technologyData = async () => {
 
 
         //let keys = boxes.keys();
-       let values = boxes.values();
+        let values = boxes.values();
         let entries = boxes.entries();
-        console.log(entries);
+      //  console.log(entries);
         for (var entry of entries) {
 
-          // let values = entry[1];
-           //console.log(entry[0]);
-          // console.log(values);
-           console.log(entry);
-          // console.log(entry[0].values);
-        // for (var val of values) {
+            // let values = entry[1];
+            //console.log(entry[0]);
+            // console.log(values);
+            //console.log(entry);
+            // console.log(entry[0].values);
+            // for (var val of values) {
 
             let entity = entry[0];
-            console.log(entry[1]);
+            //console.log(entry[1]);
             let val = entry[1];
 
             let path = plot.append("path");
@@ -405,48 +460,50 @@ const technologyData = async () => {
                 .style("stroke-width", "2px")
                 .style("fill", "none")
                 .attr("class", "diffusionLine")
-              //  .attr("id", val)
+                //  .attr("id", val)
                 .attr("d", diffusionLine)
-                //.style("opacity", 0)
-               // .transition().duration(1000).style("opacity", 1).delay(1000);
+            //.style("opacity", 0)
+            // .transition().duration(1000).style("opacity", 1).delay(1000);
 
 
 
-               let pathOutline = plot.append("path");
-               pathOutline.datum(val)
-                   .style("opacity", 0)
-                   .style("stroke-width", "20px")
-                   .style("stroke", color)
-                   .style("fill", "none")
-                   .attr("class", "diffusionLine")
-                   .attr("id", val)
-                   .attr("d", diffusionLine)
-                   .on("mouseenter", function() { 
-                       console.log("in");
-                       path.style("stroke-width", "5px"); 
-                       console.log(entity);
-                       focus.style("opacity", "1");
+            let pathOutline = plot.append("path");
+            pathOutline.datum(val)
+                .style("opacity", 0)
+                .style("stroke-width", "20px")
+                .style("stroke", color)
+                .style("fill", "none")
+                .attr("class", "diffusionLine")
+                .attr("id", val)
+                .attr("d", diffusionLine)
+                .on("mouseenter", function () {
+                   // console.log("in");
+                    path.style("stroke-width", "5px");
+                   // console.log(entity);
+                    focus.style("display", "block");
+                    focus.style("opacity", "1");
                     focus.select(".tooltip-entity").text(entity);
-                    focus.select(".tooltip-diffusion").text( ( (diffusionScale.invert(event.pageY-205) *100).toFixed(0) +"%")  );
+                    focus.select(".tooltip-diffusion").text(((diffusionScale.invert(event.pageY - 205) * 100).toFixed(0) + "%"));
 
-                    focus.attr("transform", "translate(" + ((event.pageX)-150) + "," + ((event.pageY)-250) + ")");
+                    focus.attr("transform", "translate(" + ((event.pageX) - 190) + "," + ((event.pageY) - 250) + ")");
                     //focus.style("left",event.pageX);
-                  // d3.select(".tooltip").style("left", event.pageX - (focusRect.attr("width") / 2) + "px")
-                 //   .style("top", event.pageY - (focusRect.attr("height") + 20) + "px")
+                    // d3.select(".tooltip").style("left", event.pageX - (focusRect.attr("width") / 2) + "px")
+                    //   .style("top", event.pageY - (focusRect.attr("height") + 20) + "px")
 
-                       for (var datum of val) {
+                    for (var datum of val) {
                         //   console.log(datum);
-                           
-                       }
-                   })
-                   .on("mouseout", function() { 
-                       console.log("out");
-                       path.style("stroke-width", "2px"); 
-                      focus.style("opacity", "0");
-                   })
-                   .on("mousemove", function() { 
-                    focus.attr("transform", "translate(" + ((event.pageX)-150) + "," + ((event.pageY)-250) + ")");
-                    focus.select(".tooltip-diffusion").text( ( (diffusionScale.invert(event.pageY-205) *100).toFixed(0) +"%")  );
+
+                    }
+                })
+                .on("mouseout", function () {
+                  //  console.log("out");
+                    path.style("stroke-width", "2px");
+                    focus.style("opacity", "1");
+                    focus.style("display", "none");
+                })
+                .on("mousemove", function () {
+                    focus.attr("transform", "translate(" + ((event.pageX) - 190) + "," + ((event.pageY) - 250) + ")");
+                    focus.select(".tooltip-diffusion").text(((diffusionScale.invert(event.pageY - 205) * 100).toFixed(0) + "%"));
                 })
 
             // Variable to Hold Total Length
@@ -461,61 +518,63 @@ const technologyData = async () => {
                 .ease(d3.easeQuadInOut) // Set Easing option
                 .attr("stroke-dashoffset", 0); // Set final value of dash-offset for transition
 
-      //  }
+            //  }
+        }
+
+        d3.selectAll(".focus").remove();
+        //add tooltips
+        var focus = plot.append("g")
+            .attr("class", "focus")
+            .style("opacity", "0");
+
+        // focus.append("circle")
+        //     .attr("r", 5);
+
+        focus.append("rect")
+            .attr("class", "tooltip")
+            .attr("width", 175)
+            .attr("height", 50)
+            .attr("x", 10)
+            .attr("y", -22)
+            .attr("rx", 4)
+            .attr("ry", 4);
+
+        focus.append("text")
+            .attr("class", "tooltip-entity")
+            .attr("x", 18)
+            .attr("y", -2);
+
+        focus.append("text")
+            .attr("x", 18)
+            .attr("y", 18)
+            .text("Diffusion:");
+
+        focus.append("text")
+            .attr("class", "tooltip-diffusion")
+            .attr("x", 80)
+            .attr("y", 18);
+
     }
 
-    //add tooltips
-var focus = plot.append("g")
-.attr("class", "focus")
-.style("opacity", "0");
-
-// focus.append("circle")
-//     .attr("r", 5);
-
-focus.append("rect")
-.attr("class", "tooltip")
-.attr("width", 100)
-.attr("height", 50)
-.attr("x", 10)
-.attr("y", -22)
-.attr("rx", 4)
-.attr("ry", 4);
-
-focus.append("text")
-.attr("class", "tooltip-entity")
-.attr("x", 18)
-.attr("y", -2);
-
-focus.append("text")
-.attr("x", 18)
-.attr("y", 18)
-.text("Diffusion:");
-
-focus.append("text")
-.attr("class", "tooltip-diffusion")
-.attr("x", 80)
-.attr("y", 18);
-
-    }
 
 
 
-// plot.append("rect")
-//     .attr("class", "overlay")
-//     .attr("width", 100)
-//     .attr("height", 100)
-//     .on("mouseover", function() { focus.style("display", null); })
-//     .on("mouseout", function() { focus.style("display", "none"); })
-//     .on("mousemove", mousemove);
+    // plot.append("rect")
+    //     .attr("class", "overlay")
+    //     .attr("width", 100)
+    //     .attr("height", 100)
+    //     .on("mouseover", function() { focus.style("display", null); })
+    //     .on("mouseout", function() { focus.style("display", "none"); })
+    //     .on("mousemove", mousemove);
 
-//     function mousemove() {
-//         focus.attr("transform", "translate(" + yearScale(techData.Year) + "," + diffusionScale(techData.Diffusion) + ")");
-//         focus.select(".tooltip-entity").text(techData.Entity);
-//         focus.select(".tooltip-diffusion").text(techData.Diffusion);
-//     }
+    //     function mousemove() {
+    //         focus.attr("transform", "translate(" + yearScale(techData.Year) + "," + diffusionScale(techData.Diffusion) + ")");
+    //         focus.select(".tooltip-entity").text(techData.Entity);
+    //         focus.select(".tooltip-diffusion").text(techData.Diffusion);
+    //     }
 
 
-    
+
 }
 
 
